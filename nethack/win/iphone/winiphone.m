@@ -286,7 +286,6 @@ void iphone_add_menu(winid wid, int glyph, const ANY_P *identifier,
 	NethackMenuItem *i = [[NethackMenuItem alloc] initWithId:identifier title:str glyph:glyph preselected:presel?YES:NO];
 	Window *w = [[MainViewController instance] windowWithId:wid];
 	[w addMenuItem:i];
-	[i release];
 }
 
 void iphone_end_menu(winid wid, const char *prompt) {
@@ -494,7 +493,7 @@ char iphone_yn_function(const char *question, const char *choices, CHAR_P def) {
 		} 
 		NethackYnFunction *yn = [[NethackYnFunction alloc] initWithQuestion:question choices:choices defaultChoice:def];
 		[[MainViewController instance] displayYnQuestion:yn];
-		[yn autorelease];
+		//[yn autorelease];
 		return yn.choice;
 	}
 }
@@ -791,7 +790,6 @@ void iphone_main() {
     if (![[NSFileManager defaultManager] fileExistsAtPath:logFilePath]) {
 		[[NSFileManager defaultManager] createFileAtPath:logFilePath contents:nil attributes:nil];
 	}
-	[logFilePath release];
 
 	check_recordfile("");
 

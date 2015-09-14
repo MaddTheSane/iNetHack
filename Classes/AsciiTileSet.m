@@ -77,10 +77,6 @@ static float _colorTable[][4] = {
 					  brightCyanColor,
 					  [UIColor whiteColor],
 					  nil];
-		[brightGreenColor release];
-		[brightBlueColor release];
-		[brightMagentaColor release];
-		[brightCyanColor release];
 	}
 	return self;
 }
@@ -121,9 +117,5 @@ static float _colorTable[][4] = {
 	return [colorTable objectAtIndex:ocolor];
 }
 
-- (void) dealloc {
-	[colorTable release];
-	[super dealloc];
-}
 
 @end

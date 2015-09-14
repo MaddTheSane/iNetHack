@@ -14,16 +14,16 @@
 
 #import <UIKit/UIKit.h>
 
-@protocol RoleSelectionControllerDelegate
+@protocol RoleSelectionControllerDelegate <NSObject>
 - (void)didCompleteRoleSelection:(id)sender;
 @end
 
 @interface RoleSelectionController : NSObject
 {
 	UINavigationController *navigationController;
-	id delegate;
+	id __weak delegate;
 }
-@property (assign) id delegate;
+@property (weak) id delegate;
 + (id)roleSelectorWithNavigationController:(UINavigationController *)navController;
 - (void)start;
 @end

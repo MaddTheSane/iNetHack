@@ -18,7 +18,7 @@
 #import "hack.h"
 
 @interface RoleSelectionController ()
-@property (retain) UINavigationController *navigationController;
+@property (strong) UINavigationController *navigationController;
 - (id)initWithNavigationController:(UINavigationController *)navController;
 - (void)moveToNextStep:(id)sender;
 @end
@@ -49,7 +49,6 @@ static void reset_choices (int type)
 		controller.menuItems = items;
 
 		[self.navigationController pushViewController:controller animated:self.navigationController.viewControllers.count > 1];
-		[controller release];
 	} else {
 		MenuItem *item = [items objectAtIndex:0];
 		[self performSelector:item.action withObject:item];
@@ -82,11 +81,9 @@ static void reset_choices (int type)
 			item.tag       = i;
 			item.accessory = YES;
 			[items addObject:item];
-			[item release];
 		}
 	}
 	[self showChoices:items withTitle:@"Your Alignment?"];
-	[items release];
 }
 
 - (void)didSelectGender:(id)sender
@@ -111,11 +108,9 @@ static void reset_choices (int type)
 			item.tag       = i;
 			item.accessory = YES;
 			[items addObject:item];
-			[item release];
 		}
 	}
 	[self showChoices:items withTitle:@"Your Gender?"];
-	[items release];
 }
 
 - (void)didSelectRace:(id)sender
@@ -141,11 +136,9 @@ static void reset_choices (int type)
 			item.tag       = i;
 			item.accessory = YES;
 			[items addObject:item];
-			[item release];
 		}
 	}
 	[self showChoices:items withTitle:@"Your Race?"];
-	[items release];
 }
 
 - (void)didSelectRole:(id)sender
@@ -170,10 +163,8 @@ static void reset_choices (int type)
 		item.tag       = i;
 		item.accessory = YES;
 		[items addObject:item];
-		[item release];
 	}
 	[self showChoices:items withTitle:@"Your Role?"];
-	[items release];
 	self.navigationController.navigationBar.topItem.hidesBackButton = YES;
 }
 
@@ -197,11 +188,6 @@ static void reset_choices (int type)
 	return self;
 }
 
-- (void)dealloc
-{
-	self.navigationController = nil;
-	[super dealloc];
-}
 
 - (void)moveToNextStep:(id)sender
 {
@@ -213,7 +199,7 @@ static void reset_choices (int type)
 	// Done
 	[self.navigationController popToRootViewControllerAnimated:NO];
 	[self.delegate didCompleteRoleSelection:self];
-	[self autorelease];
+	//[self autorelease];
 }
 
 - (void)start

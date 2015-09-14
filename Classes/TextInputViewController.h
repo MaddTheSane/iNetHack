@@ -42,11 +42,11 @@
 	int reentered;
 }
 
-@property (nonatomic, retain) NSString *prompt;
-@property (nonatomic, retain) NSString *text;
+@property (nonatomic, strong) NSString *prompt;
+@property (nonatomic, strong) NSString *text;
 @property (nonatomic, assign) UIReturnKeyType returnKeyType;
 @property (nonatomic, assign) BOOL numerical;
-@property (nonatomic, retain) id target;
+@property (nonatomic, strong) id target;
 @property (nonatomic, assign) SEL action;
-@property (nonatomic, retain) NSCondition *condition;
+@property (nonatomic, strong) NSCondition *condition;
 @end

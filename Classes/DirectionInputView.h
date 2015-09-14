@@ -37,6 +37,6 @@
 }
 
 @property (nonatomic, readonly) CGRect *rects;
-@property (nonatomic, readonly) Shortcut **shortcuts;
+@property (nonatomic, readonly) Shortcut *__strong*shortcuts;
 
 @end

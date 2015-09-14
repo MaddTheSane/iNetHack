@@ -31,11 +31,11 @@
 	IBOutlet ItemAmountViewController *itemAmountViewController;
 	UITableView *tv;
 	
-	Window *menuWindow;
+	Window *__weak menuWindow;
 	BOOL selectAll;
 
 }
 
-@property (nonatomic, assign) Window *menuWindow;
+@property (nonatomic, weak) Window *menuWindow;
 
 @end

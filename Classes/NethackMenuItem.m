@@ -46,10 +46,4 @@
 	return [self initWithId:i title:t glyph:g isMeta:NO preselected:p];
 }
 
-- (void) dealloc {
-	[title release];
-	[children release];
-	[super dealloc];
-}
-
 @end

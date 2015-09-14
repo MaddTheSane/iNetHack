@@ -102,7 +102,7 @@
 	static NSString *cellId = @"extendedCommandViewControllerCellId";
 	UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellId];
 	if (!cell) {
-        cell = [[[UITableViewCell alloc] initWithFrame:CGRectZero] autorelease];
+        cell = [[UITableViewCell alloc] initWithFrame:CGRectZero];
 		cell.backgroundColor = [UIColor blackColor];
 		cell.textLabel.textColor = [UIColor whiteColor];
 	}
@@ -110,10 +110,6 @@
 	cell.textLabel.text = [[NSString stringWithCString:extcmdlist[row].ef_txt encoding:NSASCIIStringEncoding] capitalizedString];
 	cell.accessoryType = UITableViewCellAccessoryNone;
 	return cell;
-}
-
-- (void)dealloc {
-    [super dealloc];
 }
 
 

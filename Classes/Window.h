@@ -75,14 +75,14 @@
 @property (nonatomic, assign) int height;
 @property (nonatomic, readonly) NSMutableArray *strings;
 @property (nonatomic, readonly) NSMutableArray *log;
-@property (nonatomic, readonly) NSString *text;
+@property (weak, nonatomic, readonly) NSString *text;
 @property (nonatomic, readonly) NSMutableArray *menuItems;
-@property (nonatomic, retain) NSString *menuPrompt;
+@property (nonatomic, strong) NSString *menuPrompt;
 @property (nonatomic, readonly) BOOL isShallowMenu;
 @property (nonatomic, assign) int menuHow;
 @property (nonatomic, assign) menu_item *menuList;
 @property (nonatomic, assign) int menuResult;
-@property (nonatomic, retain) NethackMenuItem *nethackMenuItem;
+@property (nonatomic, strong) NethackMenuItem *nethackMenuItem;
 
 @property (nonatomic, assign) BOOL acceptBareHanded;
 @property (nonatomic, assign) BOOL acceptMore;

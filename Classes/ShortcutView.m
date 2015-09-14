@@ -44,8 +44,7 @@ static Shortcut *ShortcutForIdentifier (NSString *identifier) {
         title    = @"log";
         selector = @selector(nethackShowLog:);
 	}
-	return [[[Shortcut alloc] initWithTitle:title keys:(selector ? nil : identifier) selector:selector target:nil]
-			autorelease];
+	return [[Shortcut alloc] initWithTitle:title keys:(selector ? nil : identifier) selector:selector target:nil];
 }
 
 #define TextColor        UIColor.whiteColor.CGColor
@@ -57,7 +56,7 @@ static Shortcut *ShortcutForIdentifier (NSString *identifier) {
 	NSString *title;
 	BOOL isHighlighted;
 }
-@property (retain) NSString *title;
+@property (strong) NSString *title;
 @property (nonatomic, assign) BOOL isHighlighted;
 @end
 
@@ -112,8 +111,8 @@ static Shortcut *ShortcutForIdentifier (NSString *identifier) {
 
 @interface ShortcutView ()
 @property (nonatomic, assign) NSInteger highlightedIndex;
-@property (nonatomic, retain) NSArray* shortcuts;
-@property (nonatomic, retain) NSTimer* editTimer;
+@property (nonatomic, strong) NSArray* shortcuts;
+@property (nonatomic, strong) NSTimer* editTimer;
 @end
 
 @implementation ShortcutView
@@ -138,15 +137,15 @@ static NSArray *DefaultShortcuts () {
 }
 
 + (void)load {
-	NSAutoreleasePool* pool = [NSAutoreleasePool new];
-	[[NSUserDefaults standardUserDefaults]
-	 registerDefaults:[NSDictionary dictionaryWithObject:DefaultShortcuts()
-												  forKey:ShortcutPrefencesIdentifier]];
-	if ([[NSUserDefaults standardUserDefaults] boolForKey:@"resetShortcutsOnNextLaunch"]) {
-		[[NSUserDefaults standardUserDefaults] removeObjectForKey:ShortcutPrefencesIdentifier];
-		[[NSUserDefaults standardUserDefaults] removeObjectForKey:@"resetShortcutsOnNextLaunch"];
+	@autoreleasepool {
+		[[NSUserDefaults standardUserDefaults]
+		 registerDefaults:[NSDictionary dictionaryWithObject:DefaultShortcuts()
+													  forKey:ShortcutPrefencesIdentifier]];
+		if ([[NSUserDefaults standardUserDefaults] boolForKey:@"resetShortcutsOnNextLaunch"]) {
+			[[NSUserDefaults standardUserDefaults] removeObjectForKey:ShortcutPrefencesIdentifier];
+			[[NSUserDefaults standardUserDefaults] removeObjectForKey:@"resetShortcutsOnNextLaunch"];
+		}
 	}
-	[pool drain];
 }
 
 - (id)initWithFrame:(CGRect)frame {
@@ -165,7 +164,6 @@ static NSArray *DefaultShortcuts () {
 	[[NSUserDefaults standardUserDefaults] removeObserver:self forKeyPath:ShortcutPrefencesIdentifier];
 	self.editTimer = nil;
 	self.shortcuts = nil;
-	[super dealloc];
 }
 
 // ==============
@@ -177,8 +175,7 @@ static NSArray *DefaultShortcuts () {
 - (void)setEditTimer:(NSTimer *)timer {
 	if (timer != editTimer) {
 		[editTimer invalidate];
-		[editTimer release];
-		editTimer = [timer retain];
+		editTimer = timer;
 	}
 }
 
@@ -226,8 +223,7 @@ static NSArray *DefaultShortcuts () {
 
 - (void)setShortcuts:(NSArray*)newShortcuts {
 	if (newShortcuts != shortcuts) {
-		[shortcuts release];
-		shortcuts = [newShortcuts retain];
+		shortcuts = newShortcuts;
 		self.highlightedIndex = -1;
 		[self updateLayers];
 	}
@@ -258,7 +254,6 @@ static NSArray *DefaultShortcuts () {
 		NSMutableArray* identifiers = [[[NSUserDefaults standardUserDefaults] arrayForKey:ShortcutPrefencesIdentifier] mutableCopy];
 		[identifiers replaceObjectAtIndex:editIndex withObject:textInputViewController.text];
 		[[NSUserDefaults standardUserDefaults] setObject:identifiers forKey:ShortcutPrefencesIdentifier];
-		[identifiers release];
 	}
 }
 
@@ -268,13 +263,11 @@ static NSArray *DefaultShortcuts () {
 		NSMutableArray* identifiers = [[[NSUserDefaults standardUserDefaults] arrayForKey:ShortcutPrefencesIdentifier] mutableCopy];
 		[identifiers removeObjectAtIndex:editIndex];
 		[[NSUserDefaults standardUserDefaults] setObject:identifiers forKey:ShortcutPrefencesIdentifier];
-		[identifiers release];
 	} else if (buttonIndex == 0 || buttonIndex == 1 || buttonIndex == 2) {
 		// Main Menu or Keyboard or Log
 		NSMutableArray* identifiers = [[[NSUserDefaults standardUserDefaults] arrayForKey:ShortcutPrefencesIdentifier] mutableCopy];
         [identifiers replaceObjectAtIndex:editIndex withObject:(buttonIndex == 0 ? ShortcutMainMenuIdentifier : buttonIndex==1 ? ShortcutKeyboardIdentifier : ShortcutLogIdentifier)];
 		[[NSUserDefaults standardUserDefaults] setObject:identifiers forKey:ShortcutPrefencesIdentifier];
-		[identifiers release];
 	} else if (buttonIndex == 3) {
 		// Custom key sequence
 		TextInputViewController* textInputViewController = [TextInputViewController new];
@@ -285,7 +278,6 @@ static NSArray *DefaultShortcuts () {
 		textInputViewController.returnKeyType = UIReturnKeyDone;
 		// FIXME This is bad, but I don’t know enough about the UIKit architecture yet to fix it
 		[[(UIViewController*)self.superview.nextResponder navigationController] pushViewController:textInputViewController animated:YES];
-		[textInputViewController release];
 	}
 }
 
@@ -305,7 +297,6 @@ static NSArray *DefaultShortcuts () {
 	menu.destructiveButtonIndex = 4;
 	menu.cancelButtonIndex      = 5;
 	[menu showInView:self.superview];
-	[menu release];
 }
 
 // ==================

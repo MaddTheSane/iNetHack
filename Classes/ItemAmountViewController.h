@@ -33,11 +33,11 @@
 	IBOutlet UISlider *amountSlider;
 	IBOutlet UIButton *dropButton;
 	
-	Window *menuWindow;
+	Window *__weak menuWindow;
 	BOOL targetsSet;
 	
 }
 
-@property (nonatomic, assign) Window *menuWindow;
+@property (nonatomic, weak) Window *menuWindow;
 
 @end

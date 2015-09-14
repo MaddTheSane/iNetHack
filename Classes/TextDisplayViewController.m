@@ -27,13 +27,6 @@
 
 @synthesize text, condition, isHTML, isLog;
 
-- (void)dealloc
-{
-	[condition release];
-	self.text = nil;
-	[super dealloc];
-}
-
 - (void)updateText {
 	if (textView) {
 		textView.text = self.text;
@@ -48,7 +41,6 @@
 
 - (void)setText:(NSString *)newText {
 	if (newText != text) {
-		[text release];
 		text = [newText copy];
 		[self updateText];
 	}
@@ -77,14 +69,12 @@
 		webView.backgroundColor = [UIColor blackColor];
 		webView.delegate = self;
 		self.view = webView;
-		[webView release];
 	} else {
 		textView = [[UITextView alloc] initWithFrame:self.view.frame];
 		textView.backgroundColor = [UIColor blackColor];
 		textView.textColor = [UIColor whiteColor];
 		textView.editable = NO;
 		self.view = textView;
-		[textView release];
 	}
 	[self updateText];
 }

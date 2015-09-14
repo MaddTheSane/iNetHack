@@ -46,9 +46,5 @@
 	[window addSubview:mainNavigationController.view];
 }
 
-- (void)dealloc {
-    [super dealloc];
-}
-
 
 @end

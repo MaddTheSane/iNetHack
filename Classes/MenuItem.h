@@ -36,21 +36,21 @@
 }
 
 @property (nonatomic, copy)     NSString *title;
-@property (nonatomic, retain)   id target;
+@property (nonatomic, strong)   id target;
 @property (nonatomic, assign)   SEL action;
 @property (nonatomic, assign)   BOOL accessory;
-@property (nonatomic, retain)   NSArray *children;
+@property (nonatomic, strong)   NSArray *children;
 @property (nonatomic, readonly) char key;
 @property (nonatomic, assign)   NSInteger tag;
 
-+ (id) menuItemWithTitle:(NSString *)n target:(id)t action:(SEL)s accessory:(BOOL)a;
-+ (id) menuItemWithTitle:(NSString *)n children:(NSArray *)ch;
-+ (id) menuItemWithTitle:(NSString *)n key:(char)k accessory:(BOOL)a;
-+ (id) menuItemWithTitle:(NSString *)n key:(char)k;
-- (id) initWithTitle:(NSString *)n target:(id)t action:(SEL)s accessory:(BOOL)a;
-- (id) initWithTitle:(NSString *)n children:(NSArray *)ch;
-- (id) initWithTitle:(NSString *)n key:(char)k accessory:(BOOL)a;
-- (id) initWithTitle:(NSString *)n key:(char)k;
++ (instancetype) menuItemWithTitle:(NSString *)n target:(id)t action:(SEL)s accessory:(BOOL)a;
++ (instancetype) menuItemWithTitle:(NSString *)n children:(NSArray *)ch;
++ (instancetype) menuItemWithTitle:(NSString *)n key:(char)k accessory:(BOOL)a;
++ (instancetype) menuItemWithTitle:(NSString *)n key:(char)k;
+- (instancetype) initWithTitle:(NSString *)n target:(id)t action:(SEL)s accessory:(BOOL)a;
+- (instancetype) initWithTitle:(NSString *)n children:(NSArray *)ch;
+- (instancetype) initWithTitle:(NSString *)n key:(char)k accessory:(BOOL)a;
+- (instancetype) initWithTitle:(NSString *)n key:(char)k;
 - (void) invoke;
 
 @end

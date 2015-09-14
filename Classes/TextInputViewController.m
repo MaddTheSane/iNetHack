@@ -51,7 +51,6 @@
 	UIBarButtonItem *bi = [[UIBarButtonItem alloc] initWithTitle:@"Log" style:UIBarButtonItemStylePlain
 														  target:self action:@selector(nethackShowLog:)];
 	self.navigationItem.rightBarButtonItem = bi;
-	[bi release];
 }
 
 - (void)viewDidDisappear:(BOOL)animated {
@@ -90,9 +89,5 @@
 	return YES;
 }
 
-- (void)dealloc {
-	self.target = nil;
-	[super dealloc];
-}
 
 @end

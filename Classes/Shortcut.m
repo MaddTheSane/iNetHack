@@ -37,10 +37,10 @@ static NSString* ParseShortcutString (NSString* keys) {
 
 - (id) initWithTitle:(NSString *)t keys:(NSString *)k selector:(SEL)s target:(id)tar {
 	if (self = [super init]) {
-		title = [t retain];
-		keys = [ParseShortcutString(k) retain];
+		title = t;
+		keys = ParseShortcutString(k);
 		selector = s;
-		target = [tar retain];
+		target = tar;
 	}
 	return self;
 }
@@ -64,11 +64,5 @@ static NSString* ParseShortcutString (NSString* keys) {
 	}
 }
 
-- (void) dealloc {
-	[title release];
-	[keys release];
-	[target release];
-	[super dealloc];
-}
 
 @end

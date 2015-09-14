@@ -41,28 +41,22 @@
 - (void) storeTouches:(NSSet *)touches {
 	for (UITouch *t in touches) {
 		TouchInfo *ti = [[TouchInfo alloc] initWithTouch:t];
-		NSValue *k = [NSValue valueWithPointer:t];
+		NSValue *k = [NSValue valueWithNonretainedObject:(t)];
 		[currentTouchInfos setObject:ti forKey:k];
-		[ti release];
 	}
 }
 
 - (TouchInfo *) touchInfoForTouch:(UITouch *)t {
-	NSValue *k = [NSValue valueWithPointer:t];
+	NSValue *k = [NSValue valueWithNonretainedObject:(t)];
 	TouchInfo *ti = [currentTouchInfos objectForKey:k];
 	return ti;
 }
 
 - (void) removeTouches:(NSSet *)touches {
 	for (UITouch *t in touches) {
-		NSValue *k = [NSValue valueWithPointer:t];
+		NSValue *k = [NSValue valueWithNonretainedObject:(t)];
 		[currentTouchInfos removeObjectForKey:k];
 	}
-}
-
-- (void) dealloc {
-	[currentTouchInfos release];
-	[super dealloc];
 }
 
 @end

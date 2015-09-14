@@ -83,10 +83,10 @@
 //@property (nonatomic, readonly) NSArray *windows;
 @property (nonatomic, readonly) NSDictionary *windows; //iNethack2: making this a dict
 @property (nonatomic, readonly) TilePosition *clip;
-@property (nonatomic, readonly) Window *mapWindow;
-@property (nonatomic, readonly) Window *messageWindow;
-@property (nonatomic, readonly) Window *statusWindow;
-@property (nonatomic, retain) NethackEventQueue *nethackEventQueue;
+@property (weak, nonatomic, readonly) Window *mapWindow;
+@property (weak, nonatomic, readonly) Window *messageWindow;
+@property (weak, nonatomic, readonly) Window *statusWindow;
+@property (nonatomic, strong) NethackEventQueue *nethackEventQueue;
 @property (assign) BOOL gameInProgress;
 
 + (MainViewController *) instance;

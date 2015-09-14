@@ -46,7 +46,6 @@
 	NethackEvent *e = [[NethackEvent alloc] init];
 	e.key = k;
 	[self addNethackEvent:e];
-	[e release];
 }
 
 - (NethackEvent *) waitForNextEvent {
@@ -54,9 +53,8 @@
 	while (events.count < 1) {
 		[mutex wait];
 	}
-	[lastEvent release];
 	NethackEvent *e = [events objectAtIndex:0];
-	lastEvent = [e retain];
+	lastEvent = e;
 	[events removeObjectAtIndex:0];
 	[mutex unlock];
 	return e;
@@ -71,13 +69,6 @@
 		return YES;
 	}
 	return NO;
-}
-
-- (void) dealloc {
-	[lastEvent release];
-	[mutex release];
-	[events release];
-	[super dealloc];
 }
 
 @end

@@ -31,7 +31,7 @@
 	NSMutableArray *badBones;
 }
 
-@property (nonatomic, retain) IBOutlet UIWindow *window;
+@property (nonatomic, strong) IBOutlet UIWindow *window;
 
 - (BOOL) checkNetHackDirectories;
 - (void) launchNetHack;

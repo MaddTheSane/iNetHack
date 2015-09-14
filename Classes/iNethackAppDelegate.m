@@ -43,7 +43,6 @@
 		for (int j = 0; j < 1000; ++j) {
 			[logger logString:[NSString stringWithFormat:@"This is some logged line #%04d", j]];
 		}
-		[logger release];
 	}
 	[[NSFileManager defaultManager] removeItemAtPath:tmpFile error:NULL];
 }
@@ -208,12 +207,6 @@
 		[self launchNetHack];
 		[self launchHearse];
 	}
-	[badBones release];
-}
-
-- (void)dealloc {
-    [window release];
-    [super dealloc];
 }
 
 @end

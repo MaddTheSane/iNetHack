@@ -50,7 +50,6 @@
 			int halfSize = maxSize / 2;
 			NSData *src = [[NSData alloc] initWithContentsOfMappedFile:filename];
 			NSData *sub = [src subdataWithRange:NSMakeRange(size - halfSize, halfSize)];
-			[src release];
 			const char *bytes = [sub bytes];
 			const char *pBytes = bytes;
 			int offset = 0;
@@ -82,7 +81,6 @@
 - (void) logString:(NSString *)message {
 	NSDate *date = [[NSDate alloc] init];
 	NSString *ts = [date description];
-	[date release];
 	int size = (int) ts.length + 2;
 	char dateBuffer[size];
 	[ts getCString:dateBuffer maxLength:size encoding:NSASCIIStringEncoding];
@@ -104,8 +102,6 @@
 
 - (void) dealloc {
 	fclose(fd);
-	[filename release];
-	[super dealloc];
 }
 
 @end

@@ -102,9 +102,5 @@ extern short glyph2tile[];
 	amountSlider.value = amount;
 }
 
-- (void)dealloc {
-    [super dealloc];
-}
-
 
 @end

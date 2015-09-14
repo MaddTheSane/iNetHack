@@ -34,7 +34,7 @@
 
 @property (nonatomic, copy) NSString *text;
 @property (assign) BOOL isHTML;
-@property (nonatomic, retain) NSCondition *condition;
+@property (nonatomic, strong) NSCondition *condition;
 @property (assign) BOOL isLog;
 
 @end

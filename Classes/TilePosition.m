@@ -26,7 +26,7 @@
 @synthesize x, y;
 
 + (id) tilePositionWithX:(int)i y:(int)j {
-	return [[[self alloc] initWithX:i y:j] autorelease];
+	return [[self alloc] initWithX:i y:j];
 }
 
 - (id) initWithX:(int)i y:(int)j {

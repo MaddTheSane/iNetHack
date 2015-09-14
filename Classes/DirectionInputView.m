@@ -42,7 +42,7 @@
 	return rects;
 }
 
-- (Shortcut **) shortcuts {
+- (Shortcut *__strong*) shortcuts {
 	return shortcuts;
 }
 
@@ -92,13 +92,6 @@
 	}
 }
 
-
-- (void)dealloc {
-	for (int i = 0; i < kNumRects; ++i) {
-		[shortcuts[i] release];
-	}
-    [super dealloc];
-}
 
 
 @end

@@ -64,7 +64,6 @@ static MainViewController *instance;
 	NSString *msg = [[NSString alloc] initWithFormat:format arguments:arg_list];
 	va_end(arg_list);
 	[[[self instance] messageWindow] putString:[msg cStringUsingEncoding:NSASCIIStringEncoding]];
-	[msg release];
 }
 
 - (void) awakeFromNib {
@@ -120,15 +119,15 @@ static MainViewController *instance;
 }
 
 - (void) mainNethackLoop:(id)arg {
-	NSAutoreleasePool *pool = [NSAutoreleasePool new];
-	iphone_main();
-	[pool drain];
+	@autoreleasepool {
+		iphone_main();
+	}
 }
 
 - (void) mainNethackTestLoop:(id)arg {
-	NSAutoreleasePool *pool = [NSAutoreleasePool new];
-	iphone_test_main();
-	[pool drain];
+	@autoreleasepool {
+		iphone_test_main();
+	}
 }
 
 #pragma mark window properties
@@ -211,7 +210,6 @@ static MainViewController *instance;
 	viewController.condition = condition;
     self.navigationController.view.frame = [[UIScreen mainScreen] applicationFrame]; //iNethack2 - fix for width on iphone6
     [self performSelectorOnMainThread:@selector(pushViewControllerOnMainThread:) withObject:viewController waitUntilDone:YES];
-	[viewController release];
 }
 
 - (void) displayText:(NSString *)text withCondition:(NSCondition *)condition {
@@ -252,7 +250,6 @@ static MainViewController *instance;
 	viewController.isHTML = YES;
     self.navigationController.view.frame = [[UIScreen mainScreen] applicationFrame]; //iNethack2 - fix for width on iphone6
     [self.navigationController pushViewController:viewController animated:YES];
-	[viewController release];
 }
 
 - (void) showCredits:(id)obj {
@@ -262,7 +259,6 @@ static MainViewController *instance;
 	viewController.isHTML = YES;
     self.navigationController.view.frame = [[UIScreen mainScreen] applicationFrame]; //iNethack2 - fix for width on iphone6
     [self.navigationController pushViewController:viewController animated:YES];
-	[viewController release];
 }
 
 - (void) hearseShowLog:(id)i {
@@ -362,7 +358,6 @@ static MainViewController *instance;
 	[self.navigationController setNavigationBarHidden:NO animated:YES];
     self.navigationController.view.frame = [[UIScreen mainScreen] applicationFrame]; //iNethack2 - fix for width on iphone6
     [self.navigationController pushViewController:menuViewController animated:YES];
-	[menuViewController release];
 }
 
 #pragma mark touch handling
@@ -566,7 +561,6 @@ static MainViewController *instance;
 					e.y = tp.y;
 					e.key = 0;
 					[nethackEventQueue addNethackEvent:e];
-					[e release];
 					[(MainView *) self.view resetOffset];
 					//[self.view setNeedsDisplay];
 				} else {
@@ -583,7 +577,6 @@ static MainViewController *instance;
 						e.y = u.uy;
 						e.key = 0;
 						[nethackEventQueue addNethackEvent:e];
-						[e release];
 						[(MainView *) self.view resetOffset];
 						//[self.view setNeedsDisplay];
 					} else {
@@ -602,7 +595,6 @@ static MainViewController *instance;
 						e.y = tp.y;
 						e.key = 0;
 						[nethackEventQueue addNethackEvent:e];
-						[e release];
 						[(MainView *) self.view resetOffset];
 						//[self.view setNeedsDisplay];
 					}
@@ -630,7 +622,6 @@ static MainViewController *instance;
 	//[windows addObject:w];    //iNethack2 changing to a dict
     [windows setValue:w forKey:[NSString stringWithFormat:@"%d", windowIdCounter]];
     windowIdCounter++;
-	[w release];
     return (winid) (windowIdCounter-1); //iNethack2
 	//return (winid) w;
 }
@@ -748,7 +739,6 @@ static MainViewController *instance;
             [nethackEventQueue addKeyEvent:','];
         }
     }
-    [alertView release];
     [self broadcastUIEvent];
 }
 
@@ -756,7 +746,6 @@ static MainViewController *instance;
 - (void)actionSheet:(UIActionSheet *)actionSheet willDismissWithButtonIndex:(NSInteger)buttonIndex {
     currentYnFunction.chosen = (int) buttonIndex;
     [self broadcastUIEvent];
-    [actionSheet release];
     currentYnFunction = nil;
 }
 
@@ -873,7 +862,6 @@ static MainViewController *instance;
 			NSString *t = [NSString stringWithContentsOfFile:path encoding:NSASCIIStringEncoding error:NULL];
 			[self displayText:t withCondition:textDisplayCondition];
 			[self waitForCondition:textDisplayCondition];
-			[textDisplayCondition release];
 		} else {
 			if (e) {
 				NSLog(@"error: could not find file %@ for display", filename);
@@ -947,17 +935,5 @@ static MainViewController *instance;
 }
  */
 
-#pragma mark dealloc
-
-- (void)dealloc {
-	[touchInfoStore release];
-	[uiCondition release];
-	[textInputCondition release];
-	[windows release];
-	[lastSingleTapDelta release];
-	[clip release];
-	[dmath release];
-    [super dealloc];
-}
 
 @end

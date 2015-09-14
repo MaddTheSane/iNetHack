@@ -36,7 +36,7 @@
 	CGSize maxTileSize;
 	CGSize minTileSize;
 	CGPoint start;
-	IBOutlet UITextField *dummyTextField;
+	IBOutlet UITextField *__weak dummyTextField;
 
 	BOOL tiled;
 	TileSet *tileSet;
@@ -63,14 +63,14 @@
 
 @property (nonatomic, readonly) CGPoint start;
 @property (nonatomic, readonly) CGSize tileSize;
-@property (nonatomic, readonly) IBOutlet UITextField *dummyTextField;
+@property (weak, nonatomic, readonly) IBOutlet UITextField *dummyTextField;
 @property (nonatomic, readonly) BOOL isMoved;
 @property (nonatomic, readonly) TileSet *tileSet;
-@property (nonatomic, retain) Window *map;
-@property (nonatomic, retain) Window *status;
-@property (nonatomic, retain) Window *message;
+@property (nonatomic, strong) Window *map;
+@property (nonatomic, strong) Window *status;
+@property (nonatomic, strong) Window *message;
 @property (nonatomic, readonly) CGPoint subViewedCenter;
-@property (nonatomic, readonly) NSCache *cache; //iNethack2: glyph cache
+@property (weak, nonatomic, readonly) NSCache *cache; //iNethack2: glyph cache
 
 - (void) drawTiledMap:(Window *)m clipRect:(CGRect)clipRect;
 - (void) checkForRogueLevel;

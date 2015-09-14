@@ -37,10 +37,10 @@
 @synthesize status, map, message;
 
 + (void) initialize {
-	NSAutoreleasePool* pool = [NSAutoreleasePool new];
-	[[NSUserDefaults standardUserDefaults]
-	 registerDefaults:[NSDictionary dictionaryWithObject:[NSNumber numberWithFloat:40] forKey:kKeyTileSize]];
-	[pool drain];
+	@autoreleasepool {
+		[[NSUserDefaults standardUserDefaults]
+		 registerDefaults:[NSDictionary dictionaryWithObject:[NSNumber numberWithFloat:40] forKey:kKeyTileSize]];
+	}
 }
 
 - (id)initWithFrame:(CGRect)frame {
@@ -120,7 +120,7 @@
 	[self addSubview:shortcutView];
 
 	// reuse the more button
-	moreButton = [[UIButton buttonWithType:UIButtonTypeDetailDisclosure] retain];
+	moreButton = [UIButton buttonWithType:UIButtonTypeDetailDisclosure];
 }
 
 - (CGPoint) subViewedCenter {
@@ -307,7 +307,6 @@
 		}
 	} else {
 		tileSet = tileSets[0];
-		[tileSets[1] release];
 		tileSets[1] = nil;
 	}
 }
@@ -516,15 +515,6 @@
 		return YES;
 	}
 	return NO;
-}
-
-- (void)dealloc {
-	[tileSets[0] release];
-	[tileSets[1] release];
-	[shortcutView release];
-	[petMark release];
-	[bundleVersionString release];
-    [super dealloc];
 }
 
 @end

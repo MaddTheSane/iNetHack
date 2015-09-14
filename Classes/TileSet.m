@@ -77,7 +77,6 @@ static TileSet *instance = nil;
 		CGImageRelease(images[i]);
 	}
 	free(images);
-	[super dealloc];
 }
 
 @end

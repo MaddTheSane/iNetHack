@@ -63,7 +63,6 @@
 		submenuController.title = menuItem.title;
 		submenuController.menuItems = menuItem.children;
 		[self.navigationController pushViewController:submenuController animated:YES];
-		[submenuController release];
 	} else if (menuItem.key) {
 		[[[MainViewController instance] nethackEventQueue] addKeyEvent:menuItem.key];
 		[self.navigationController popToRootViewControllerAnimated:NO];
@@ -86,7 +85,7 @@
 	static NSString *cellId = @"menuViewControllerCellId";
 	UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellId];
 	if (!cell) {
-        cell = [[[UITableViewCell alloc] initWithFrame:CGRectZero] autorelease];
+        cell = [[UITableViewCell alloc] initWithFrame:CGRectZero];
 		cell.textLabel.textColor = [UIColor whiteColor];
 	}
 	int row = (int) [indexPath row];
@@ -100,11 +99,6 @@
 		cell.accessoryType = UITableViewCellAccessoryNone;
 	}
 	return cell;
-}
-
-- (void)dealloc {
-	[menuItems release];
-    [super dealloc];
 }
 
 @end

@@ -62,7 +62,7 @@
 		CGRect *rects = [(DirectionInputView *) self.view rects];
 		for (int i = 0; i < kNumRects; ++i) {
 			if (CGRectContainsPoint(rects[i], p)) {
-				Shortcut **shortcuts = [(DirectionInputView *) self.view shortcuts];
+				Shortcut *__strong*shortcuts = [(DirectionInputView *) self.view shortcuts];
 				Shortcut *sh = shortcuts[i];
 				if (sh) {
 					direction = sh.key;
@@ -74,12 +74,5 @@
 		}
 	}
 }
-
-#pragma mark dealloc
-
-- (void)dealloc {
-    [super dealloc];
-}
-
 
 @end

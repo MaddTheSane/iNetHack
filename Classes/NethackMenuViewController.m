@@ -72,20 +72,17 @@ extern short glyph2tile[];
 		any.a_int = 0;
 		NethackMenuItem *miParent = [[NethackMenuItem alloc] initWithId:&any title:"Meta" glyph:kNoGlyph preselected:NO];
 		[menuWindow addMenuItem:miParent];
-		[miParent release];
 		if (menuWindow.acceptBareHanded) {
 			any.a_int = '-';
 			NethackMenuItem *mi = [[NethackMenuItem alloc] initWithId:&any title:"Hands (-)"
 																glyph:kNoGlyph isMeta:YES preselected:NO];
 			[menuWindow addMenuItem:mi];
-			[mi release];
 		}
 		if (menuWindow.acceptMore) {
 			any.a_int = '*';
 			NethackMenuItem *mi = [[NethackMenuItem alloc] initWithId:&any title:"More (*)"
 																glyph:kNoGlyph isMeta:YES preselected:NO];
 			[menuWindow addMenuItem:mi];
-			[mi release];
 		}
 		if (menuWindow.acceptMoney) {
 			any.a_int = '$';
@@ -95,7 +92,6 @@ extern short glyph2tile[];
 																glyph:kNoGlyph isMeta:YES preselected:NO];
 			mi.isGold = YES;
 			[menuWindow addMenuItem:mi];
-			[mi release];
 		}
 	}
 
@@ -104,7 +100,6 @@ extern short glyph2tile[];
 		UIBarButtonItem *bi = [[UIBarButtonItem alloc] initWithTitle:@"All" style:UIBarButtonItemStylePlain
 															  target:self action:@selector(selectAll:)];
 		self.navigationItem.rightBarButtonItem = bi;
-		[bi release];
 	} else {
 		self.navigationItem.rightBarButtonItem = nil;
 	}
@@ -263,7 +258,7 @@ extern short glyph2tile[];
 	static NSString *cellId = @"nethackMenuViewControllerCellId";
 	UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellId];
 	if (!cell) {
-		cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:cellId] autorelease];
+		cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:cellId];
 		cell.textLabel.textColor = [UIColor whiteColor];
 	}
     cell.backgroundColor = [UIColor clearColor];

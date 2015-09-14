@@ -32,16 +32,16 @@ static HearseFileRegistry *instance;
 @implementation HearseFileRegistry
 
 + (void)load {
-	NSAutoreleasePool* pool = [NSAutoreleasePool new];
-	NSDictionary *registry = [NSDictionary dictionaryWithObjectsAndKeys:
-							  [NSDictionary dictionary], hearseFileRegistryKeyUploads,
-							  [NSDictionary dictionary], hearseFileRegistryKeyDownloads,
-							  nil];
-	NSDictionary *d = [NSDictionary dictionaryWithObjectsAndKeys:
-					   registry, hearseFileRegistryKey,
-					   nil];
-	[[NSUserDefaults standardUserDefaults] registerDefaults:d];
-	[pool drain];
+	@autoreleasepool {
+		NSDictionary *registry = [NSDictionary dictionaryWithObjectsAndKeys:
+								  [NSDictionary dictionary], hearseFileRegistryKeyUploads,
+								  [NSDictionary dictionary], hearseFileRegistryKeyDownloads,
+								  nil];
+		NSDictionary *d = [NSDictionary dictionaryWithObjectsAndKeys:
+						   registry, hearseFileRegistryKey,
+						   nil];
+		[[NSUserDefaults standardUserDefaults] registerDefaults:d];
+	}
 }
 
 + (HearseFileRegistry *) instance {
@@ -87,17 +87,10 @@ static HearseFileRegistry *instance;
 }
 		
 - (void) clear {
-	[uploads release];
-	[downloads release];
 	uploads = [[NSMutableDictionary alloc] init];
 	downloads = [[NSMutableDictionary alloc] init];
 	[self synchronize];
 }
 
-- (void) dealloc {
-	[uploads release];
-	[downloads release];
-	[super dealloc];
-}
 
 @end

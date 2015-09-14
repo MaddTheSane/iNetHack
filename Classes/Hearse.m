@@ -66,7 +66,7 @@ static NSString *const hearseCommandDownload = @"download";
 }
 
 + (void) stop {
-	[instance release];
+	instance = nil;
 }
 
 #pragma mark md5 handling
@@ -137,7 +137,6 @@ static NSString *const hearseCommandDownload = @"download";
 + (void) dumpData:(NSData *)data {
 	NSString *s = [[NSString alloc] initWithData:data encoding:NSASCIIStringEncoding];
 	NSLog(@"%@", s);
-	[s release];
 }
 
 #pragma mark constructors, main loop
@@ -186,23 +185,23 @@ static NSString *const hearseCommandDownload = @"download";
 }
 
 - (void) mainHearseLoop:(id)arg {
-	NSAutoreleasePool * pool = [[NSAutoreleasePool alloc] init];
-	if ([self isHearseReachable]) {
-		if (!hearseId || hearseId.length == 0) {
-			if (email && email.length > 0) {
-				[self createNewUser];
+	@autoreleasepool {
+		if ([self isHearseReachable]) {
+			if (!hearseId || hearseId.length == 0) {
+				if (email && email.length > 0) {
+					[self createNewUser];
+				}
+			} else {
+				[self logFormat:@"using existing token %@", hearseId];
 			}
-		} else {
-			[self logFormat:@"using existing token %@", hearseId];
-		}
 
-		if (hearseId && hearseId.length > 0) {
-			[self uploadBones];
-			[self downloadBones];
+			if (hearseId && hearseId.length > 0) {
+				[self uploadBones];
+				[self downloadBones];
+			}
 		}
+		[logger flush];
 	}
-	[logger flush];
-	[pool drain];
 }
 
 #pragma mark URL and connection handling
@@ -263,7 +262,7 @@ static NSString *const hearseCommandDownload = @"download";
 	} else {
 		fatal = [self getHeader:@"X_error" fromResponse:response];
 		if (fatal) {
-			return [[[NSString alloc] initWithData:data encoding:NSASCIIStringEncoding] autorelease];
+			return [[NSString alloc] initWithData:data encoding:NSASCIIStringEncoding];
 		}
 	}
 	return nil;
@@ -290,7 +289,6 @@ static NSString *const hearseCommandDownload = @"download";
 		} else {
 			NSString *headerHearseId = [self getHeader:@"X_USERTOKEN" fromResponse:response];
 			if (headerHearseId) {
-				[hearseId release];
 				hearseId = [headerHearseId copy];
 			}
 			if (hearseId && hearseId.length > 0) {
@@ -341,7 +339,6 @@ static NSString *const hearseCommandDownload = @"download";
 		NSString *hearseMessageOfTheDay = [self getHeader:@"X_MOTD" fromResponse:response];
 		NSString *version = [self getHeader:@"X_NETHACKVER" fromResponse:response];
 		if (version && ![version isEqual:hearseInternalVersion]) {
-			[hearseInternalVersion release];
 			hearseInternalVersion = [version copy];
 		}
 		if (hearseMessageOfTheDay) {
@@ -426,7 +423,7 @@ static NSString *const hearseCommandDownload = @"download";
 					return @"Missing filename from hearse";
 				}
 			} else {
-				return [[[NSString alloc] initWithData:data encoding:NSASCIIStringEncoding] autorelease];
+				return [[NSString alloc] initWithData:data encoding:NSASCIIStringEncoding];
 			}
 		}
 	} else {
@@ -487,21 +484,10 @@ static NSString *const hearseCommandDownload = @"download";
 	va_start(vlist, message);
 	NSString *s = [[NSString alloc] initWithFormat:message arguments:vlist];
 	[self logMessage:s];
-	[s release];
 }
 
 - (void) dealloc {
-	[username release];
-	[email release];
-	[hearseId release];
-	[clientVersionCrc release];
-	[netHackVersion release];
-	[netHackVersionCrc release];
-	[thread release];
-	[hearseInternalVersion release];
-	[[HearseFileRegistry instance] release];
-	[logger release];
-	[super dealloc];
+	//[HearseFileRegistry instance];
 }
 
 @end

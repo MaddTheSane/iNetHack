@@ -27,26 +27,26 @@
 @synthesize title, target, action, accessory, children, key, tag;
 
 + (id) menuItemWithTitle:(NSString *)n target:(id)t action:(SEL)s accessory:(BOOL)a {
-	return [[[self alloc] initWithTitle:n target:t action:s accessory:a] autorelease];
+	return [[self alloc] initWithTitle:n target:t action:s accessory:a];
 }
 
 + (id) menuItemWithTitle:(NSString *)n children:(NSArray *)ch {
-	return [[[self alloc] initWithTitle:n children:ch] autorelease];
+	return [[self alloc] initWithTitle:n children:ch];
 }
 
 + (id) menuItemWithTitle:(NSString *)n key:(char)k accessory:(BOOL)a {
-	return [[[self alloc] initWithTitle:n key:k accessory:a] autorelease];
+	return [[self alloc] initWithTitle:n key:k accessory:a];
 }
 
 + (id) menuItemWithTitle:(NSString *)n key:(char)k {
-	return [[[self alloc] initWithTitle:n key:k] autorelease];
+	return [[self alloc] initWithTitle:n key:k];
 }
 
 - (id) initWithTitle:(NSString *)n target:(id)t action:(SEL)s accessory:(BOOL)a {
 	if (self = [super init]) {
-		title = [n retain];
+		title = n;
 		action = s;
-		target = [t retain];
+		target = t;
 		accessory = a;
 	}
 	return self;
@@ -73,13 +73,6 @@
 
 - (void) invoke {
 	[target performSelector:action withObject:self];
-}
-
-- (void) dealloc {
-	[title release];
-	[target release];
-	[children release];
-	[super dealloc];
 }
 
 @end

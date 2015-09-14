@@ -115,7 +115,6 @@
 }
 
 - (void) startMenu {
-	[menuItems release];
 	menuItems = [[NSMutableArray alloc] init];
 }
 
@@ -162,11 +161,6 @@
 
 - (void) dealloc {
 	free(glyphs);
-	[strings release];
-	[log release];
-	[menuItems release];
-	[messageCondition release];
-	[super dealloc];
 }
 
 @end
