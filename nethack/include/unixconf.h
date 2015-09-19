@@ -285,8 +285,10 @@
 
 #if defined(BSD) || defined(ULTRIX)
 # if !defined(DGUX) && !defined(SUNOS4)
+#ifndef __APPLE__
 #define memcpy(d, s, n)		bcopy(s, d, n)
 #define memcmp(s1, s2, n)	bcmp(s2, s1, n)
+#endif
 # endif
 # ifdef SUNOS4
 #include <memory.h>

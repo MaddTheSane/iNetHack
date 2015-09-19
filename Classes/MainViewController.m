@@ -20,6 +20,7 @@
 //  You should have received a copy of the GNU General Public License
 //  along with iNetHack.  If not, see <http://www.gnu.org/licenses/>.
 
+#include <tgmath.h>
 #import "MainViewController.h"
 #import "MainView.h"
 #import "winiphone.h"
@@ -492,7 +493,7 @@ static MainViewController *instance;
 				CGPoint p = [touch locationInView:self.view];
 				CGPoint delta = CGPointMake(p.x-ti.currentLocation.x, p.y-ti.currentLocation.y);
 				BOOL move = NO;
-				if (!ti.moved && (abs(delta.x)+abs(delta.y) > kMinimumPanDelta)) {
+				if (!ti.moved && (fabs(delta.x)+fabs(delta.y) > kMinimumPanDelta)) {
 					ti.moved = YES;
 					move = YES;
 				} else if (ti.moved) {

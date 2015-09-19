@@ -58,7 +58,7 @@
 	
 	NSString *bundleVersionString;
     
-    NSCache * cache; //iNethack2: glyph cache for faster rendering
+	NSCache * cache; //iNethack2: glyph cache for faster rendering
 }
 
 @property (nonatomic, readonly) CGPoint start;
@@ -70,7 +70,7 @@
 @property (nonatomic, strong) Window *status;
 @property (nonatomic, strong) Window *message;
 @property (nonatomic, readonly) CGPoint subViewedCenter;
-@property (weak, nonatomic, readonly) NSCache *cache; //iNethack2: glyph cache
+@property (nonatomic, readonly) NSCache *cache; //iNethack2: glyph cache
 
 - (void) drawTiledMap:(Window *)m clipRect:(CGRect)clipRect;
 - (void) checkForRogueLevel;

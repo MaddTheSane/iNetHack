@@ -719,7 +719,7 @@ uptodate_64(fd, name)
 int fd;
 const char *name;
 {
-    int rlen;
+    ssize_t rlen;
     struct version_info vers_info;
     boolean verbose = name ? TRUE : FALSE;
     
