@@ -77,7 +77,7 @@
 @property (nonatomic, readonly) NSMutableArray *log;
 @property (weak, nonatomic, readonly) NSString *text;
 @property (nonatomic, readonly) NSMutableArray *menuItems;
-@property (nonatomic, strong) NSString *menuPrompt;
+@property (nonatomic, copy) NSString *menuPrompt;
 @property (nonatomic, readonly) BOOL isShallowMenu;
 @property (nonatomic, assign) int menuHow;
 @property (nonatomic, assign) menu_item *menuList;
@@ -91,7 +91,7 @@
 @property (assign) BOOL shouldDisplay;
 @property (assign) BOOL blocking;
 
-- (id) initWithType:(int)t;
+- (instancetype) initWithType:(int)t;
 - (int) glyphAtX:(int)x y:(int)y;
 - (void) setGlyph:(int)g atX:(int)x y:(int)y;
 - (void) clear;

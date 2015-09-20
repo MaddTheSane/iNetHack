@@ -34,8 +34,8 @@
 @property (nonatomic, readonly) int count;
 @property (nonatomic, assign) NSTimeInterval singleTapTimestamp;
 
-- (void) storeTouches:(NSSet *)touches;
+- (void) storeTouches:(NSSet<UITouch*> *)touches;
 - (TouchInfo *) touchInfoForTouch:(UITouch *)t;
-- (void) removeTouches:(NSSet *)touches;
+- (void) removeTouches:(NSSet<UITouch*> *)touches;
 
 @end

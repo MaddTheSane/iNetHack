@@ -33,7 +33,7 @@
 @property (nonatomic, assign) int x;
 @property (nonatomic, assign) int y;
 
-+ (id) tilePositionWithX:(int)i y:(int)j;
-- (id) initWithX:(int)i y:(int)j;
++ (instancetype) tilePositionWithX:(int)i y:(int)j;
+- (instancetype) initWithX:(int)i y:(int)j;
 
 @end

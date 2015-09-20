@@ -40,6 +40,6 @@
 // only updated on -init, for your own use
 @property (nonatomic, assign) CGPoint currentLocation;
 
-- (id) initWithTouch:(UITouch *)t;
+- (instancetype) initWithTouch:(UITouch *)t;
 
 @end

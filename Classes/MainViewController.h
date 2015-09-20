@@ -23,6 +23,8 @@
 #import <UIKit/UIKit.h>
 #include "hack.h"
 
+#import "RoleSelectionController.h"
+
 // ctrl-macro
 #ifndef C
 #define C(c)		(0x1f & (c))
@@ -39,7 +41,7 @@
 @class TilePosition;
 @class DMath;
 
-@interface MainViewController : UIViewController <UIActionSheetDelegate, UITextFieldDelegate , UIAlertViewDelegate> {
+@interface MainViewController : UIViewController <UIActionSheetDelegate, UITextFieldDelegate , UIAlertViewDelegate, RoleSelectionControllerDelegate> {
 	
 	IBOutlet NethackMenuViewController *nethackMenuViewController;
 	IBOutlet TextInputViewController *textInputViewController;

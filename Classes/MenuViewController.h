@@ -22,6 +22,7 @@
 
 #import <UIKit/UIKit.h>
 
+@class MenuItem;
 
 @interface MenuViewController : UITableViewController {
 	
@@ -30,6 +31,6 @@
 
 }
 
-@property (nonatomic, strong) NSArray *menuItems;
+@property (nonatomic, strong) NSArray<MenuItem*> *menuItems;
 
 @end

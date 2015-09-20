@@ -103,7 +103,7 @@
 }
 
 - (NSString *) text {
-	NSString *result = [NSString string];
+	NSString *result = [[NSString alloc] init];
 	for (NSString *s in strings) {
 		if (result.length > 0) {
 			result = [result stringByAppendingFormat:@"\n%@", s];

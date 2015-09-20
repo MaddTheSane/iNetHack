@@ -25,7 +25,9 @@
 
 @implementation TextDisplayViewController
 
-@synthesize text, condition, isHTML, isLog;
+@synthesize text, condition;
+@synthesize HTML = isHTML;
+@synthesize log = isLog;
 
 - (void)updateText {
 	if (textView) {

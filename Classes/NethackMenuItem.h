@@ -41,13 +41,13 @@
 @property (nonatomic, readonly) NSString *title;
 @property (nonatomic, readonly) BOOL isTitle;
 @property (nonatomic, readonly) NSMutableArray *children;
-@property (nonatomic, assign) BOOL isSelected;
+@property (nonatomic, assign, getter=isSelected) BOOL selected;
 @property (nonatomic, readonly) int glyph;
-@property (nonatomic, assign) BOOL isMeta;
+@property (nonatomic, assign, getter=isMeta) BOOL meta;
 @property (nonatomic, assign) int amount;
-@property (nonatomic, assign) BOOL isGold;
+@property (nonatomic, assign, getter=isGold) BOOL gold;
 
-- (id) initWithId:(const anything *)i title:(const char *)t glyph:(int)g isMeta:(BOOL)m preselected:(BOOL)p;
-- (id) initWithId:(const anything *)i title:(const char *)t glyph:(int)g preselected:(BOOL)p;
+- (instancetype) initWithId:(const anything *)i title:(const char *)t glyph:(int)g isMeta:(BOOL)m preselected:(BOOL)p;
+- (instancetype) initWithId:(const anything *)i title:(const char *)t glyph:(int)g preselected:(BOOL)p;
 
 @end

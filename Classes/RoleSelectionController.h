@@ -21,9 +21,9 @@
 @interface RoleSelectionController : NSObject
 {
 	UINavigationController *navigationController;
-	id __weak delegate;
+	id<RoleSelectionControllerDelegate> __weak delegate;
 }
-@property (weak) id delegate;
-+ (id)roleSelectorWithNavigationController:(UINavigationController *)navController;
+@property (weak) id<RoleSelectionControllerDelegate> delegate;
++ (instancetype)roleSelectorWithNavigationController:(UINavigationController *)navController;
 - (void)start;
 @end

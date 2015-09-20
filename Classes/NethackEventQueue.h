@@ -27,7 +27,7 @@
 @interface NethackEventQueue : NSObject {
 	
 	NSCondition *mutex;
-	NSMutableArray *events;
+	NSMutableArray<NethackEvent*> *events;
 	NethackEvent *lastEvent;
 
 }
