@@ -81,13 +81,13 @@
 - (void) logString:(NSString *)message {
 	NSDate *date = [[NSDate alloc] init];
 	NSString *ts = [date description];
-	int size = (int) ts.length + 2;
+	size_t size = [ts lengthOfBytesUsingEncoding:NSASCIIStringEncoding] + 2;
 	char dateBuffer[size];
 	[ts getCString:dateBuffer maxLength:size encoding:NSASCIIStringEncoding];
 	dateBuffer[size-2] = ' ';
 	dateBuffer[size-1] = 0;
 	fputs(dateBuffer, fd);
-	size = (int) message.length + 2;
+	size = [message lengthOfBytesUsingEncoding:NSASCIIStringEncoding] + 2;
 	char msg[size];
 	[message getCString:msg maxLength:size encoding:NSASCIIStringEncoding];
 	msg[size-2] = '\n';
@@ -96,8 +96,12 @@
 }
 
 - (void) flush {
+#if 0
+	fflush(fd);
+#else
 	fclose(fd);
 	fd = fopen([filename fileSystemRepresentation], "a");
+#endif
 }
 
 - (void) dealloc {

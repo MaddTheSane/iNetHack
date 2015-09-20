@@ -21,6 +21,9 @@
 //  along with iNetHack.  If not, see <http://www.gnu.org/licenses/>.
 
 #import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
+
+NS_ASSUME_NONNULL_BEGIN
 
 @class TouchInfo;
 
@@ -31,11 +34,13 @@
 
 }
 
-@property (nonatomic, readonly) int count;
+@property (nonatomic, readonly) NSInteger count;
 @property (nonatomic, assign) NSTimeInterval singleTapTimestamp;
 
 - (void) storeTouches:(NSSet<UITouch*> *)touches;
-- (TouchInfo *) touchInfoForTouch:(UITouch *)t;
+- (nullable TouchInfo *) touchInfoForTouch:(UITouch *)t;
 - (void) removeTouches:(NSSet<UITouch*> *)touches;
 
 @end
+
+NS_ASSUME_NONNULL_END

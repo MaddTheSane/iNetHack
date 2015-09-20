@@ -26,6 +26,8 @@
 
 #define kNoGlyph (-1)
 
+NS_ASSUME_NONNULL_BEGIN
+
 @class NethackMenuItem;
 
 @interface Window : NSObject <NSLocking> {
@@ -40,11 +42,11 @@
 	int maxHeight;
 	
 	int *glyphs;
-	NSMutableArray *strings;
+	NSMutableArray<NSString*> *strings;
 	int maxLogEntries;
-	NSMutableArray *log;
+	NSMutableArray<NSString*> *log;
 	
-	NSMutableArray *menuItems;
+	NSMutableArray<NethackMenuItem*> *menuItems;
 	NSString *menuPrompt;
 	BOOL isShallowMenu;
 	int menuHow;
@@ -73,16 +75,16 @@
 @property (nonatomic, assign) int cury;
 @property (nonatomic, assign) int width;
 @property (nonatomic, assign) int height;
-@property (nonatomic, readonly) NSMutableArray *strings;
-@property (nonatomic, readonly) NSMutableArray *log;
-@property (weak, nonatomic, readonly) NSString *text;
-@property (nonatomic, readonly) NSMutableArray *menuItems;
-@property (nonatomic, copy) NSString *menuPrompt;
+@property (nonatomic, readonly) NSMutableArray<NSString*> *strings;
+@property (nonatomic, readonly) NSMutableArray<NSString*> *log;
+@property (copy, nonatomic, readonly) NSString *text;
+@property (nonatomic, readonly) NSMutableArray<NethackMenuItem*> *menuItems;
+@property (nonatomic, copy, nullable) NSString *menuPrompt;
 @property (nonatomic, readonly) BOOL isShallowMenu;
 @property (nonatomic, assign) int menuHow;
 @property (nonatomic, assign) menu_item *menuList;
 @property (nonatomic, assign) int menuResult;
-@property (nonatomic, strong) NethackMenuItem *nethackMenuItem;
+@property (nonatomic, strong, nullable) NethackMenuItem *nethackMenuItem;
 
 @property (nonatomic, assign) BOOL acceptBareHanded;
 @property (nonatomic, assign) BOOL acceptMore;
@@ -102,3 +104,5 @@
 - (void) clearMessages;
 
 @end
+
+NS_ASSUME_NONNULL_END

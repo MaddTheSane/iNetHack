@@ -442,10 +442,10 @@
 	*size = CGSizeMake(0,0);
     CGFloat maxWidth = [MainView screenSize].width;
 	for (NSString *s in strings) {
-        CGSize tmpSize = [s sizeWithAttributes:@ { NSFontAttributeName:font}];
+        CGSize tmpSize = [s sizeWithAttributes:@{ NSFontAttributeName:font}];
 		while (tmpSize.width > maxWidth) {
 			font = [font fontWithSize:font.pointSize-1];
-            tmpSize = [s sizeWithAttributes:@ { NSFontAttributeName:font}];
+            tmpSize = [s sizeWithAttributes:@{ NSFontAttributeName:font}];
 		}
 		size->width = tmpSize.width > size->width ? tmpSize.width:size->width;
 		size->height += tmpSize.height;
@@ -460,10 +460,10 @@
 	}
 	*size = CGSizeMake(0,0);
     CGFloat maxWidth = [MainView screenSize].width;
-    CGSize tmpSize = [s sizeWithAttributes:@ { NSFontAttributeName:font}];
+    CGSize tmpSize = [s sizeWithAttributes:@{ NSFontAttributeName:font}];
 	while (tmpSize.width > maxWidth) {
 		font = [font fontWithSize:font.pointSize-1];
-        tmpSize = [s sizeWithAttributes:@ { NSFontAttributeName:font}];
+        tmpSize = [s sizeWithAttributes:@{ NSFontAttributeName:font}];
 	}
     size->width = tmpSize.width > size->width ? tmpSize.width:size->width;
 	size->height += tmpSize.height;

@@ -24,6 +24,14 @@
 #import "MainViewController.h"
 
 @implementation TextDisplayViewController
+{
+	UIWebView *webView;
+	UITextView *textView;
+	NSCondition *condition;
+	NSString *text;
+	BOOL isHTML;
+	BOOL isLog;
+}
 
 @synthesize text, condition;
 @synthesize HTML = isHTML;

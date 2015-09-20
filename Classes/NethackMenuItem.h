@@ -23,24 +23,15 @@
 #import <Foundation/Foundation.h>
 #include "hack.h"
 
-@interface NethackMenuItem : NSObject {
-	
-	anything identifier;
-	NSString *title;
-	BOOL isTitle;
-	NSMutableArray *children;
-	BOOL isSelected;
-	int glyph;
-	BOOL isMeta;
-	int amount;
-	BOOL isGold;
+NS_ASSUME_NONNULL_BEGIN
 
-}
+@class NethackMenuItem;
 
+@interface NethackMenuItem : NSObject
 @property (nonatomic, readonly) anything identifier;
 @property (nonatomic, readonly) NSString *title;
 @property (nonatomic, readonly) BOOL isTitle;
-@property (nonatomic, readonly) NSMutableArray *children;
+@property (nonatomic, readonly) NSMutableArray<NethackMenuItem*> *children;
 @property (nonatomic, assign, getter=isSelected) BOOL selected;
 @property (nonatomic, readonly) int glyph;
 @property (nonatomic, assign, getter=isMeta) BOOL meta;
@@ -51,3 +42,5 @@
 - (instancetype) initWithId:(const anything *)i title:(const char *)t glyph:(int)g preselected:(BOOL)p;
 
 @end
+
+NS_ASSUME_NONNULL_END

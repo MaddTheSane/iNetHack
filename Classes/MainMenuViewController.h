@@ -28,6 +28,6 @@
 
 }
 
-- (IBAction) startNewGame:(id)sender;
+- (IBAction) startNewGame:(nullable id)sender;
 
 @end

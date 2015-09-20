@@ -22,13 +22,9 @@
 
 #import <Foundation/Foundation.h>
 
+NS_ASSUME_NONNULL_BEGIN
 
-@interface TilePosition : NSObject {
-	
-	int x;
-	int y;
-
-}
+@interface TilePosition : NSObject
 
 @property (nonatomic, assign) int x;
 @property (nonatomic, assign) int y;
@@ -37,3 +33,5 @@
 - (instancetype) initWithX:(int)i y:(int)j;
 
 @end
+
+NS_ASSUME_NONNULL_END

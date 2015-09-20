@@ -25,6 +25,11 @@
 #import "MainView.h"
 
 @implementation DirectionInputView
+{
+	CGSize tileSize;
+	CGRect rects[kNumRects];
+	Shortcut *shortcuts[kNumRects];
+}
 
 - (id)initWithFrame:(CGRect)frame {
     if (self = [super initWithFrame:frame]) {

@@ -24,7 +24,7 @@
 
 @class MenuItem;
 
-@interface MenuViewController : UITableViewController {
+@interface MenuViewController : UITableViewController <UITableViewDelegate, UITableViewDataSource> {
 	
 	UITableView *tv;
 	NSArray *menuItems;

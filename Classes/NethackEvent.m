@@ -32,6 +32,10 @@
 
 - (id) initWithKey:(int)k x:(int)i y:(int)j mod:(int)m {
 	if (self = [super init]) {
+		key = k;
+		x = i;
+		y = j;
+		mod = m;
 	}
 	return self;
 }

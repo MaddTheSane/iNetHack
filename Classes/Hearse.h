@@ -32,6 +32,8 @@
 #define kKeyHearseEmail (@"hearseEmail")
 #define kKeyHearseId (@"hearseId")
 
+NS_ASSUME_NONNULL_BEGIN
+
 @class FileLogger;
 
 @interface Hearse : NSObject <UIAlertViewDelegate> {
@@ -58,12 +60,12 @@
 
 @property (nonatomic, readonly) BOOL haveUploadedBones;
 
-+ (Hearse *) instance;
++ (nullable Hearse *) instance;
 + (BOOL) start;
 + (void) stop;
 
 + (NSString *) md5HexForString:(NSString *)s;
-+ (NSString *) md5HexForFile:(NSString *)filename;
++ (nullable NSString *) md5HexForFile:(NSString *)filename;
 + (NSString *) md5HexForData:(NSData *)data;
 + (NSString *) md5HexForDigest:(const unsigned char *)digest;
 
@@ -71,19 +73,20 @@
 + (void) dumpResponse:(NSHTTPURLResponse *)response;
 + (void) dumpData:(NSData *)data;
 
+@property (nonatomic, readonly, getter=isHearseReachable) BOOL hearseReachable;
 - (BOOL) isHearseReachable;
 - (void) start;
 - (void) mainHearseLoop:(id)arg;
 - (NSString *) urlForCommand:(NSString *)cmd;
 - (NSMutableURLRequest *) requestForCommand:(NSString *)cmd;
-- (NSHTTPURLResponse *) httpGetRequestWithoutData:(NSURLRequest *)req;
-- (NSHTTPURLResponse *) httpPostRequestWithoutData:(NSMutableURLRequest *)req;
-- (NSHTTPURLResponse *) httpGetRequest:(NSURLRequest *)req withData:(NSData **)data;
+- (nullable NSHTTPURLResponse *) httpGetRequestWithoutData:(NSURLRequest *)req;
+- (nullable NSHTTPURLResponse *) httpPostRequestWithoutData:(NSMutableURLRequest *)req;
+- (nullable NSHTTPURLResponse *) httpGetRequest:(NSURLRequest *)req withData:(NSData *__nullable*__nullable)data;
 
 // header name is case insensitive!
-- (NSString *) getHeader:(NSString *)header fromResponse:(NSHTTPURLResponse *)response;
+- (nullable NSString *) getHeader:(NSString *)header fromResponse:(NSHTTPURLResponse *)response;
 
-- (NSString *) extractHearseErrorMessageFromResponse:(NSHTTPURLResponse *)response data:(NSData *)data;
+- (nullable NSString *) extractHearseErrorMessageFromResponse:(NSHTTPURLResponse *)response data:(NSData *)data;
 - (NSString *) buildUserInfoCrc;
 - (void) createNewUser;
 - (BOOL) isValidBonesFileName:(NSString *)bonesFileName;
@@ -96,5 +99,8 @@
 - (void) logHearseMessage:(NSString *)message;
 - (void) logMessage:(NSString *)message;
 - (void) logFormat:(NSString *)message, ...;
+- (void) logFormat:(NSString *)message format:(va_list)vlist;
 
 @end
+
+NS_ASSUME_NONNULL_END

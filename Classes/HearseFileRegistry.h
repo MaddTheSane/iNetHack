@@ -22,6 +22,8 @@
 
 #import <Foundation/Foundation.h>
 
+NS_ASSUME_NONNULL_BEGIN
+
 @interface HearseFileRegistry : NSObject {
 	
 	NSMutableDictionary *uploads;
@@ -29,7 +31,7 @@
 
 }
 
-+ (HearseFileRegistry *) instance;
++ (nullable HearseFileRegistry *) instance;
 
 - (void) synchronize;
 - (void) registerDownloadedFile:(NSString *)filename withMd5:(NSString *)md5;
@@ -37,3 +39,5 @@
 - (void) clear;
 
 @end
+
+NS_ASSUME_NONNULL_END

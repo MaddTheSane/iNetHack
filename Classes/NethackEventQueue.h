@@ -24,6 +24,8 @@
 
 @class NethackEvent;
 
+NS_ASSUME_NONNULL_BEGIN
+
 @interface NethackEventQueue : NSObject {
 	
 	NSCondition *mutex;
@@ -32,7 +34,7 @@
 
 }
 
-@property (nonatomic, readonly) NethackEvent *lastEvent;
+@property (nonatomic, readonly, nullable) NethackEvent *lastEvent;
 
 - (void) addNethackEvent:(NethackEvent *)e;
 - (void) addKeyEvent:(int)k;
@@ -42,3 +44,5 @@
 - (BOOL) repeatLastEvent;
 
 @end
+
+NS_ASSUME_NONNULL_END

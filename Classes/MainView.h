@@ -24,6 +24,8 @@
 
 #import "hack.h"
 
+NS_ASSUME_NONNULL_BEGIN
+
 #define kKeyTileSize (@"tileSize")
 
 @class MainViewController, TilePosition, Window, TileSet, ShortcutView;
@@ -63,22 +65,24 @@
 
 @property (nonatomic, readonly) CGPoint start;
 @property (nonatomic, readonly) CGSize tileSize;
-@property (weak, nonatomic, readonly) IBOutlet UITextField *dummyTextField;
-@property (nonatomic, readonly) BOOL isMoved;
+@property (weak, nonatomic, readonly, nullable) IBOutlet UITextField *dummyTextField;
+@property (nonatomic, readonly, getter=isMoved) BOOL moved;
 @property (nonatomic, readonly) TileSet *tileSet;
 @property (nonatomic, strong) Window *map;
 @property (nonatomic, strong) Window *status;
 @property (nonatomic, strong) Window *message;
 @property (nonatomic, readonly) CGPoint subViewedCenter;
-@property (nonatomic, readonly) NSCache *cache; //iNethack2: glyph cache
+@property (nonatomic, readonly, nullable) NSCache *cache; //iNethack2: glyph cache
 
 - (void) drawTiledMap:(Window *)m clipRect:(CGRect)clipRect;
 - (void) checkForRogueLevel;
-- (UIFont *) fontAndSize:(CGSize *)size forStrings:(NSArray *)strings withFont:(UIFont *)font;
-- (UIFont *) fontAndSize:(CGSize *)size forString:(NSString *)s withFont:(UIFont *)font;
+- (UIFont *) fontAndSize:(nullable CGSize *)size forStrings:(NSArray<NSString*> *)strings withFont:(UIFont *)font;
+- (UIFont *) fontAndSize:(nullable CGSize *)size forString:(NSString *)s withFont:(UIFont *)font;
 - (TilePosition *) tilePositionFromPoint:(CGPoint)p;
 - (void) moveAlongVector:(CGPoint)d;
 - (void) resetOffset;
 - (void) zoom:(CGFloat)d;
 - (void) resetGlyphCache; //iNethack2: reset cache each time level change to ensure walls are correct set
 @end
+
+NS_ASSUME_NONNULL_END

@@ -22,20 +22,23 @@
 
 #import <Foundation/Foundation.h>
 
+
+NS_ASSUME_NONNULL_BEGIN
+
 @interface TileSet : NSObject {
-	
 	CGSize tileSize;
 	CGImageRef *images;
 	int numImages;
-
 }
 
-+ (TileSet *) instance;
++ (nullable TileSet *) instance;
 + (int) glyphToTileIndex:(int)g;
 
-- (instancetype) initWithImage:(UIImage *)image tileSize:(CGSize)ts;
-- (CGImageRef) imageAt:(int)i;
-- (CGImageRef) imageForGlyph:(int)g atX:(int)x y:(int)y;
-- (CGImageRef) imageForGlyph:(int)g;
+- (instancetype) initWithImage:(nullable UIImage *)image tileSize:(CGSize)ts;
+- (nullable CGImageRef) imageAt:(int)i;
+- (nullable CGImageRef) imageForGlyph:(int)g atX:(int)x y:(int)y;
+- (nullable CGImageRef) imageForGlyph:(int)g;
 
 @end
+
+NS_ASSUME_NONNULL_END

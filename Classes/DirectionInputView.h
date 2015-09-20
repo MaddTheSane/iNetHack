@@ -28,15 +28,13 @@
 
 @class Shortcut;
 
-@interface DirectionInputView : UIView {
-	
-	CGSize tileSize;
-	CGRect rects[kNumRects];
-	Shortcut *shortcuts[kNumRects];
-	
-}
+NS_ASSUME_NONNULL_BEGIN
+
+@interface DirectionInputView : UIView
 
 @property (nonatomic, readonly) CGRect *rects;
-@property (nonatomic, readonly) Shortcut *__strong*shortcuts;
+@property (nonatomic, readonly) Shortcut *__nonnull __strong* __nonnull shortcuts;
 
 @end
+
+NS_ASSUME_NONNULL_END

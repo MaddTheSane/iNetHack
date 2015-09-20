@@ -1762,6 +1762,10 @@
 				PREBINDING = NO;
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "6E06132B-5A72-4984-AB28-86AB1CECD2DF";
 				SDKROOT = iphoneos;
+				WARNING_CFLAGS = (
+					"-Wno-comment",
+					"-Wno-format-security",
+				);
 			};
 			name = Distribution;
 		};
@@ -1798,6 +1802,10 @@
 				ONLY_ACTIVE_ARCH = YES;
 				PREBINDING = NO;
 				SDKROOT = iphoneos;
+				WARNING_CFLAGS = (
+					"-Wno-comment",
+					"-Wno-format-security",
+				);
 			};
 			name = Debug;
 		};
@@ -1812,6 +1820,10 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PREBINDING = NO;
 				SDKROOT = iphoneos;
+				WARNING_CFLAGS = (
+					"-Wno-comment",
+					"-Wno-format-security",
+				);
 			};
 			name = Release;
 		};

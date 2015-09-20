@@ -19,7 +19,7 @@
 
 @interface RoleSelectionController ()
 @property (strong) UINavigationController *navigationController;
-- (id)initWithNavigationController:(UINavigationController *)navController;
+- (instancetype)initWithNavigationController:(UINavigationController *)navController;
 - (void)moveToNextStep:(id)sender;
 @end
 
@@ -42,6 +42,9 @@ static void reset_choices (int type)
 }
 
 @implementation RoleSelectionController
+{
+	UINavigationController *navigationController;
+}
 - (void)showChoices:(NSArray<MenuItem*> *)items withTitle:(NSString *)title {
 	if (items.count > 1) {
 		MenuViewController* controller = [MenuViewController new];

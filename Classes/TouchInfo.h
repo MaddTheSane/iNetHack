@@ -22,15 +22,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface TouchInfo : NSObject {
-	
-	BOOL pinched;
-	BOOL moved;
-	BOOL doubleTap;
-	CGPoint initialLocation;
-	CGPoint currentLocation;
-
-}
+@interface TouchInfo : NSObject
 
 @property (nonatomic, assign) BOOL pinched;
 @property (nonatomic, assign) BOOL moved;
@@ -40,6 +32,6 @@
 // only updated on -init, for your own use
 @property (nonatomic, assign) CGPoint currentLocation;
 
-- (instancetype) initWithTouch:(UITouch *)t;
+- (nonnull instancetype) initWithTouch:(nonnull UITouch *)t;
 
 @end

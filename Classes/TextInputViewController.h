@@ -22,20 +22,14 @@
 
 #import <UIKit/UIKit.h>
 
+NS_ASSUME_NONNULL_BEGIN
 
 @interface TextInputViewController : UIViewController <UITextFieldDelegate> {
 	
 	IBOutlet UITextField *tf;
 	IBOutlet UILabel *label;
-	NSString *prompt;
-	NSString *text;
-	BOOL numerical;
 	UIReturnKeyType returnKeyType;
 	
-	id target;
-	SEL action;
-
-	NSCondition *condition;
 	BOOL returned;
 	
 	// avoid reentrance problems (issue 66)
@@ -48,5 +42,7 @@
 @property (nonatomic, assign) BOOL numerical;
 @property (nonatomic, strong) id target;
 @property (nonatomic, assign) SEL action;
-@property (nonatomic, strong) NSCondition *condition;
+@property (nonatomic, strong, nullable) NSCondition *condition;
 @end
+
+NS_ASSUME_NONNULL_END

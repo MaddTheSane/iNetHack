@@ -38,6 +38,6 @@
 	
 }
 
-@property (nonatomic, weak) Window *menuWindow;
+@property (nonatomic, weak, nullable) Window *menuWindow;
 
 @end

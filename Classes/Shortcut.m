@@ -37,7 +37,7 @@ static NSString* ParseShortcutString (NSString* keys) {
 
 - (id) initWithTitle:(NSString *)t keys:(NSString *)k selector:(SEL)s target:(id)tar {
 	if (self = [super init]) {
-		title = t;
+		title = [t copy];
 		keys = ParseShortcutString(k);
 		selector = s;
 		target = tar;

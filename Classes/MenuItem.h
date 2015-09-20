@@ -23,34 +23,27 @@
 #import <Foundation/Foundation.h>
 
 
-@interface MenuItem : NSObject {
+NS_ASSUME_NONNULL_BEGIN
 
-	NSString *title;
-	id target;
-	SEL action;
-	BOOL accessory;
-	
-	NSArray *children;
-	char key;
-	NSInteger tag;
-}
-
+@interface MenuItem : NSObject
 @property (nonatomic, copy)     NSString *title;
-@property (nonatomic, strong)   id target;
-@property (nonatomic, assign)   SEL action;
+@property (nonatomic, strong, nullable)   id target;
+@property (nonatomic, assign, nullable)   SEL action;
 @property (nonatomic, assign)   BOOL accessory;
-@property (nonatomic, strong)   NSArray *children;
+@property (nonatomic, strong, nullable)   NSArray *children;
 @property (nonatomic, readonly) char key;
 @property (nonatomic, assign)   NSInteger tag;
 
-+ (instancetype) menuItemWithTitle:(NSString *)n target:(id)t action:(SEL)s accessory:(BOOL)a;
++ (instancetype) menuItemWithTitle:(NSString *)n target:(nullable id)t action:(nullable SEL)s accessory:(BOOL)a;
 + (instancetype) menuItemWithTitle:(NSString *)n children:(NSArray *)ch;
 + (instancetype) menuItemWithTitle:(NSString *)n key:(char)k accessory:(BOOL)a;
 + (instancetype) menuItemWithTitle:(NSString *)n key:(char)k;
-- (instancetype) initWithTitle:(NSString *)n target:(id)t action:(SEL)s accessory:(BOOL)a;
+- (instancetype) initWithTitle:(NSString *)n target:(nullable id)t action:(nullable SEL)s accessory:(BOOL)a NS_DESIGNATED_INITIALIZER;
 - (instancetype) initWithTitle:(NSString *)n children:(NSArray *)ch;
 - (instancetype) initWithTitle:(NSString *)n key:(char)k accessory:(BOOL)a;
 - (instancetype) initWithTitle:(NSString *)n key:(char)k;
 - (void) invoke;
 
 @end
+
+NS_ASSUME_NONNULL_END
