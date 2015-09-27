@@ -491,7 +491,6 @@ static NSString *const hearseCommandDownload = @"download";
 	[self logMessage:s];
 }
 
-
 - (void) dealloc {
 	//[[HearseFileRegistry instance] release];
 }

@@ -142,5 +142,4 @@ static float _colorTable[][4] = {
 	return [colorTable objectAtIndex:ocolor];
 }
 
-
 @end

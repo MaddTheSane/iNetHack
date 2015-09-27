@@ -92,5 +92,4 @@ static HearseFileRegistry *instance;
 	[self synchronize];
 }
 
-
 @end

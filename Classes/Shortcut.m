@@ -64,5 +64,4 @@ static NSString* ParseShortcutString (NSString* keys) {
 	}
 }
 
-
 @end

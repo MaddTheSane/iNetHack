@@ -191,7 +191,6 @@ static void reset_choices (int type)
 	return self;
 }
 
-
 - (void)moveToNextStep:(id)sender
 {
 	if (flags.initrole == -1)  return [self selectRole];

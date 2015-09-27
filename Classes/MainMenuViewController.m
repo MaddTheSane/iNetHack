@@ -46,5 +46,4 @@
 	[window addSubview:mainNavigationController.view];
 }
 
-
 @end

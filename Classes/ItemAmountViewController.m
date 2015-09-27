@@ -102,5 +102,4 @@ extern short glyph2tile[];
 	amountSlider.value = amount;
 }
 
-
 @end

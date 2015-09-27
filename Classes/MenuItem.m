@@ -44,7 +44,7 @@
 
 - (id) initWithTitle:(NSString *)n target:(id)t action:(SEL)s accessory:(BOOL)a {
 	if (self = [super init]) {
-		title = n;
+		title = [n copy];
 		action = s;
 		target = t;
 		accessory = a;

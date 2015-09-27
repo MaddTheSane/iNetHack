@@ -33,7 +33,7 @@ NS_ASSUME_NONNULL_BEGIN
 @interface DirectionInputView : UIView
 
 @property (nonatomic, readonly) CGRect *rects;
-@property (nonatomic, readonly) Shortcut *__nonnull __strong* __nonnull shortcuts;
+@property (nonatomic, readonly) Shortcut *__nonnull __strong* __nullable shortcuts;
 
 @end
 
