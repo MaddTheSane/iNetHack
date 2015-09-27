@@ -103,15 +103,15 @@
 }
 
 - (NSString *) text {
-	NSString *result = [[NSString alloc] init];
+	NSMutableString *result = [[NSMutableString alloc] init];
 	for (NSString *s in strings) {
 		if (result.length > 0) {
-			result = [result stringByAppendingFormat:@"\n%@", s];
+			[result appendFormat:@"\n%@", s];
 		} else {
-			result = [result stringByAppendingFormat:@"%@", s];
+			[result appendFormat:@"%@", s];
 		}
 	}
-	return result;
+	return [result copy];
 }
 
 - (void) startMenu {
