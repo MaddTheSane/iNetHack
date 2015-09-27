@@ -96,12 +96,7 @@
 }
 
 - (void) flush {
-#if 0
 	fflush(fd);
-#else
-	fclose(fd);
-	fd = fopen([filename fileSystemRepresentation], "a");
-#endif
 }
 
 - (void) dealloc {

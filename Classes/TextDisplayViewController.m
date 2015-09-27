@@ -80,10 +80,12 @@
 		webView.delegate = self;
 		self.view = webView;
 	} else {
-		textView = [[UITextView alloc] initWithFrame:self.view.frame];
+        textView = [[UITextView alloc] initWithFrame:self.view.frame];
 		textView.backgroundColor = [UIColor blackColor];
 		textView.textColor = [UIColor whiteColor];
 		textView.editable = NO;
+        textView.scrollEnabled = NO;    //iOS9 fix: disable then enable scrolling so initial scrolling works
+        textView.scrollEnabled = YES;   //...
 		self.view = textView;
 	}
 	[self updateText];
