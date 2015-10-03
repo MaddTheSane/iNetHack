@@ -98,8 +98,8 @@ NS_ASSUME_NONNULL_BEGIN
 - (void) alertUserWithError:(NSError *)error;
 - (void) logHearseMessage:(NSString *)message;
 - (void) logMessage:(NSString *)message;
+- (void) logMessage:(NSString *)message format:(va_list)format;
 - (void) logFormat:(NSString *)message, ...;
-- (void) logFormat:(NSString *)message format:(va_list)vlist;
 
 @end
 
