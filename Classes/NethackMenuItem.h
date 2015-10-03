@@ -26,6 +26,7 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface NethackMenuItem : NSObject
+
 @property (nonatomic, readonly) anything identifier;
 @property (nonatomic, readonly, copy) NSString *title;
 @property (nonatomic, readonly) BOOL isTitle;

@@ -83,8 +83,8 @@
 }
 
 //@property (nonatomic, readonly) NSArray *windows;
-@property (nonatomic, readonly) NSDictionary *windows; //iNethack2: making this a dict
-@property (nonatomic, readonly) TilePosition *clip;
+@property (nonatomic, readonly, retain) NSDictionary *windows; //iNethack2: making this a dict
+@property (nonatomic, readonly, retain) TilePosition *clip;
 @property (weak, nonatomic, readonly) Window *mapWindow;
 @property (weak, nonatomic, readonly) Window *messageWindow;
 @property (weak, nonatomic, readonly) Window *statusWindow;

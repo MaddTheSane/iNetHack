@@ -26,6 +26,7 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface MenuItem : NSObject
+
 @property (nonatomic, copy)     NSString *title;
 @property (nonatomic, strong, nullable)   id target;
 @property (nonatomic, assign, nullable)   SEL action;

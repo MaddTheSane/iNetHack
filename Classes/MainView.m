@@ -39,8 +39,8 @@
 
 + (void) initialize {
 	@autoreleasepool {
-		[[NSUserDefaults standardUserDefaults]
-		 registerDefaults:[NSDictionary dictionaryWithObject:[NSNumber numberWithFloat:40] forKey:kKeyTileSize]];
+	[[NSUserDefaults standardUserDefaults]
+	 registerDefaults:[NSDictionary dictionaryWithObject:@(40.0f) forKey:kKeyTileSize]];
 	}
 }
 

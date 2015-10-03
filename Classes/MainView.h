@@ -54,19 +54,19 @@ NS_ASSUME_NONNULL_BEGIN
 	
 	NSString *bundleVersionString;
     
-	NSCache * cache; //iNethack2: glyph cache for faster rendering
+    NSCache * cache; //iNethack2: glyph cache for faster rendering
 }
 
 @property (nonatomic, readonly) CGPoint start;
 @property (nonatomic, readonly) CGSize tileSize;
 @property (weak, nonatomic, readonly, nullable) IBOutlet UITextField *dummyTextField;
 @property (nonatomic, readonly, getter=isMoved) BOOL moved;
-@property (nonatomic, readonly) TileSet *tileSet;
+@property (nonatomic, readonly, strong) TileSet *tileSet;
 @property (nonatomic, strong) Window *map;
 @property (nonatomic, strong) Window *status;
 @property (nonatomic, strong) Window *message;
 @property (nonatomic, readonly) CGPoint subViewedCenter;
-@property (nonatomic, readonly, nullable) NSCache *cache; //iNethack2: glyph cache
+@property (nonatomic, readonly, retain) NSCache *cache; //iNethack2: glyph cache
 
 - (void) drawTiledMap:(Window *)m clipRect:(CGRect)clipRect;
 - (void) checkForRogueLevel;

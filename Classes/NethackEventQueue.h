@@ -33,7 +33,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 }
 
-@property (nonatomic, readonly, nullable) NethackEvent *lastEvent;
+@property (nonatomic, readonly, strong, nullable) NethackEvent *lastEvent;
 
 - (void) addNethackEvent:(NethackEvent *)e;
 - (void) addKeyEvent:(int)k;

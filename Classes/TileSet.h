@@ -35,9 +35,9 @@ NS_ASSUME_NONNULL_BEGIN
 + (int) glyphToTileIndex:(int)g;
 
 - (instancetype) initWithImage:(nullable UIImage *)image tileSize:(CGSize)ts;
-- (nullable CGImageRef) imageAt:(int)i;
-- (nullable CGImageRef) imageForGlyph:(int)g atX:(int)x y:(int)y;
-- (nullable CGImageRef) imageForGlyph:(int)g;
+- (nullable CGImageRef) imageAt:(int)i CF_RETURNS_NOT_RETAINED;
+- (nullable CGImageRef) imageForGlyph:(int)g atX:(int)x y:(int)y CF_RETURNS_NOT_RETAINED;
+- (nullable CGImageRef) imageForGlyph:(int)g CF_RETURNS_NOT_RETAINED;
 
 @end
 

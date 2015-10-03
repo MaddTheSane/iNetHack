@@ -55,10 +55,10 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, assign) int cury;
 @property (nonatomic, assign) int width;
 @property (nonatomic, assign) int height;
-@property (nonatomic, readonly) NSMutableArray<NSString*> *strings;
-@property (nonatomic, readonly) NSMutableArray<NSString*> *log;
-@property (copy, nonatomic, readonly) NSString *text;
-@property (nonatomic, readonly) NSMutableArray<NethackMenuItem*> *menuItems;
+@property (nonatomic, readonly, strong) NSMutableArray<NSString*> *strings;
+@property (nonatomic, readonly, strong) NSMutableArray<NSString*> *log;
+@property (nonatomic, readonly, copy) NSString *text;
+@property (nonatomic, readonly, strong) NSMutableArray<NethackMenuItem*> *menuItems;
 @property (nonatomic, copy, nullable) NSString *menuPrompt;
 @property (nonatomic, readonly, getter=isShallowMenu) BOOL shallowMenu;
 @property (nonatomic, assign) int menuHow;
