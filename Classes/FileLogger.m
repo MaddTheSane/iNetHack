@@ -64,7 +64,7 @@
 	}
 }
 
-- (id) initWithFile:(NSString *)path maxSize:(int)ms {
+- (instancetype) initWithFile:(NSString *)path maxSize:(int)ms {
 	if (self = [super init]) {
 		filename = [path copy];
 		maxSize = ms;
@@ -74,7 +74,7 @@
 	return self;
 }
 
-- (id) initWithFile:(NSString *)path {
+- (instancetype) initWithFile:(NSString *)path {
 	return [self initWithFile:path maxSize:4096];
 }
 

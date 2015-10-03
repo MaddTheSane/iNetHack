@@ -31,7 +31,6 @@
 	IBOutlet ItemAmountViewController *itemAmountViewController;
 	UITableView *tv;
 	
-	Window *__weak menuWindow;
 	BOOL selectAll;
 
 }

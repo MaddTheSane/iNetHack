@@ -50,6 +50,10 @@ extern volatile boolean winiphone_clickable_tiles;
 
 static MainViewController *instance;
 
+@interface MainViewController () <RoleSelectionControllerDelegate>
+
+@end
+
 @implementation MainViewController
 
 @synthesize windows, clip, nethackEventQueue;

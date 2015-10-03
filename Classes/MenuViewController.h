@@ -27,7 +27,6 @@
 @interface MenuViewController : UITableViewController <UITableViewDelegate, UITableViewDataSource> {
 	
 	UITableView *tv;
-	NSArray *menuItems;
 
 }
 

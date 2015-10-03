@@ -24,6 +24,7 @@
 
 
 @interface NethackYnFunction : NSObject
+
 @property (nonatomic, readonly) const char *question;
 @property (nonatomic, readonly) const char *choices;
 @property (nonatomic, readonly) char defaultChoice;

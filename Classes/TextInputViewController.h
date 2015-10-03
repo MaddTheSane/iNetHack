@@ -28,8 +28,6 @@ NS_ASSUME_NONNULL_BEGIN
 	
 	IBOutlet UITextField *tf;
 	IBOutlet UILabel *label;
-	UIReturnKeyType returnKeyType;
-	
 	BOOL returned;
 	
 	// avoid reentrance problems (issue 66)

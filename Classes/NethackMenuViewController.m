@@ -200,7 +200,7 @@ extern short glyph2tile[];
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
 	NethackMenuItem *i = [self nethackMenuItemAtIndexPath:indexPath];
 	if (menuWindow.menuHow == PICK_ANY) {
-		i.selected = !i.selected;
+		i.selected = !i.isSelected;
 		UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
 		cell.accessoryType = i.isSelected ? UITableViewCellAccessoryCheckmark:UITableViewCellAccessoryNone;
 	} else {

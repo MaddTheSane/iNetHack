@@ -74,7 +74,6 @@ NS_ASSUME_NONNULL_BEGIN
 + (void) dumpData:(NSData *)data;
 
 @property (nonatomic, readonly, getter=isHearseReachable) BOOL hearseReachable;
-- (BOOL) isHearseReachable;
 - (void) start;
 - (void) mainHearseLoop:(id)arg;
 - (NSString *) urlForCommand:(NSString *)cmd;

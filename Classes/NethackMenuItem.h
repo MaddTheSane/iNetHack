@@ -25,13 +25,11 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@class NethackMenuItem;
-
 @interface NethackMenuItem : NSObject
 @property (nonatomic, readonly) anything identifier;
-@property (nonatomic, readonly) NSString *title;
+@property (nonatomic, readonly, copy) NSString *title;
 @property (nonatomic, readonly) BOOL isTitle;
-@property (nonatomic, readonly) NSMutableArray<NethackMenuItem*> *children;
+@property (nonatomic, readonly, strong) NSMutableArray<NethackMenuItem*> *children;
 @property (nonatomic, assign, getter=isSelected) BOOL selected;
 @property (nonatomic, readonly) int glyph;
 @property (nonatomic, assign, getter=isMeta) BOOL meta;

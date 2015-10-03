@@ -30,7 +30,6 @@ NS_ASSUME_NONNULL_BEGIN
 	
 	NSCondition *mutex;
 	NSMutableArray<NethackEvent*> *events;
-	NethackEvent *lastEvent;
 
 }
 

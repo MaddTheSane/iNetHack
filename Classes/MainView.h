@@ -34,10 +34,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 	MainViewController *mainViewController;
 	UIFont *statusFont;
-	CGSize tileSize;
 	CGSize maxTileSize;
 	CGSize minTileSize;
-	CGPoint start;
 	IBOutlet UITextField *__weak dummyTextField;
 
 	BOOL tiled;
@@ -51,10 +49,6 @@ NS_ASSUME_NONNULL_BEGIN
 	
 	CGSize tilesetTileSize;
 	BOOL asciiTileset;
-	
-	Window *map;
-	Window *status;
-	Window *message;
 	
 	UIButton *moreButton;
 	

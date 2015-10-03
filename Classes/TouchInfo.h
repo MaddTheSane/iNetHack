@@ -29,7 +29,7 @@
 @property (nonatomic, assign) BOOL doubleTap;
 @property (nonatomic, assign) CGPoint initialLocation;
 
-// only updated on -init, for your own use
+/// only updated on -init, for your own use
 @property (nonatomic, assign) CGPoint currentLocation;
 
 - (nonnull instancetype) initWithTouch:(nonnull UITouch *)t;
