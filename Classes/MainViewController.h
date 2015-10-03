@@ -93,6 +93,7 @@
 
 + (MainViewController *) instance;
 + (void) message:(NSString *)format, ...;
++ (void) message:(NSString *)message format:(va_list)arg_list;
 
 - (void) launchNetHack;
 - (void) mainNethackLoop:(id)arg;
