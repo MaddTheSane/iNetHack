@@ -80,19 +80,18 @@ static NSString *const hearseCommandDownload = @"download";
 
 + (NSString *) md5HexForFile:(NSString *)filename {
 	CC_MD5_CTX context;
-	CC_MD5_CTX *c = &context;
-	CC_MD5_Init(c);
+	CC_MD5_Init(&context);
 	int fh = open([filename fileSystemRepresentation], O_RDONLY);
 	if (fh != -1) {
 		const int bufferSize = 1024;
 		char buffer[bufferSize];
-		long bytesRead;
+		ssize_t bytesRead;
 		while ((bytesRead = read(fh, buffer, bufferSize))) {
-			CC_MD5_Update(c, buffer, (unsigned int) bytesRead);
+			CC_MD5_Update(&context, buffer, (unsigned int) bytesRead);
 		}
 		close(fh);
 		unsigned char digest[CC_MD5_DIGEST_LENGTH];
-		CC_MD5_Final(digest, c);
+		CC_MD5_Final(digest, &context);
 		if (bytesRead == -1) {
 			return nil;
 		} else {
