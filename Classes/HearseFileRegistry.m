@@ -44,6 +44,23 @@ static HearseFileRegistry *instance;
 	}
 }
 
++ (void) retainInstance {
+	if (!instance) {
+		instance = [[HearseFileRegistry alloc] init]; //Returns with +1 already
+	} else {
+		[instance release];
+	}
+}
+
++ (void) releaseInstance {
+	HearseFileRegistry *tmpInstance = instance;
+	if ([tmpInstance retainCount] == 1) {
+		instance = nil;
+	}
+	[tmpInstance release];
+}
+
+
 + (HearseFileRegistry *) instance {
 	return instance;
 }
@@ -87,9 +104,17 @@ static HearseFileRegistry *instance;
 }
 		
 - (void) clear {
+	[uploads release];
+	[downloads release];
 	uploads = [[NSMutableDictionary alloc] init];
 	downloads = [[NSMutableDictionary alloc] init];
 	[self synchronize];
+}
+
+- (void) dealloc {
+	[uploads release];
+	[downloads release];
+	[super dealloc];
 }
 
 @end

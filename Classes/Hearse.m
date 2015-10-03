@@ -142,7 +142,7 @@ static NSString *const hearseCommandDownload = @"download";
 
 - (id) init {
 	if (self = [super init]) {
-		[[HearseFileRegistry alloc] init];
+		[HearseFileRegistry retainInstance];
 		username = [[[NSUserDefaults standardUserDefaults] stringForKey:kKeyHearseUsername] copy];
 		email = [[[NSUserDefaults standardUserDefaults] stringForKey:kKeyHearseEmail] copy];
 		hearseId = [[[NSUserDefaults standardUserDefaults] stringForKey:kKeyHearseId] copy];
@@ -494,7 +494,7 @@ static NSString *const hearseCommandDownload = @"download";
 }
 
 - (void) dealloc {
-	//[[HearseFileRegistry instance] release];
+	[HearseFileRegistry releaseInstance];
 }
 
 @end

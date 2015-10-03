@@ -158,7 +158,7 @@
 		43C5AD890FFA75F7004F67ED /* NethackMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 43C5AD880FFA75F7004F67ED /* NethackMenuViewController.m */; };
 		43C5AD930FFA772B004F67ED /* NethackMenuView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 43C5AD920FFA772B004F67ED /* NethackMenuView.xib */; };
 		43C5F77F0FFB965800FAC706 /* NethackYnFunction.m in Sources */ = {isa = PBXBuildFile; fileRef = 43C5F77E0FFB965800FAC706 /* NethackYnFunction.m */; };
-		43CA7F73108F0B67006D377A /* HearseFileRegistry.m in Sources */ = {isa = PBXBuildFile; fileRef = 43CA7F72108F0B67006D377A /* HearseFileRegistry.m */; };
+		43CA7F73108F0B67006D377A /* HearseFileRegistry.m in Sources */ = {isa = PBXBuildFile; fileRef = 43CA7F72108F0B67006D377A /* HearseFileRegistry.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		43D113CF1007491700082C8D /* TextDisplayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 43D113CE1007491700082C8D /* TextDisplayViewController.m */; };
 		43D1142B10074E9F00082C8D /* news in Resources */ = {isa = PBXBuildFile; fileRef = 43D1142A10074E9F00082C8D /* news */; };
 		43D1149410075A0A00082C8D /* TilePosition.m in Sources */ = {isa = PBXBuildFile; fileRef = 43D1149310075A0A00082C8D /* TilePosition.m */; };

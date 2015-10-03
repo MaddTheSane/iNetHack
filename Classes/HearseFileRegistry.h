@@ -33,6 +33,9 @@ NS_ASSUME_NONNULL_BEGIN
 
 + (nullable HearseFileRegistry *) instance;
 
++ (void) retainInstance;
++ (void) releaseInstance;
+
 - (void) synchronize;
 - (void) registerDownloadedFile:(NSString *)filename withMd5:(NSString *)md5;
 - (BOOL) haveDownloadedFile:(NSString *)filename;
