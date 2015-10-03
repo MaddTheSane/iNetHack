@@ -108,10 +108,10 @@
 		if (result.length > 0) {
 			[result appendFormat:@"\n%@", s];
 		} else {
-			[result appendFormat:@"%@", s];
+			[result appendString:s];
 		}
 	}
-	return [result copy];
+	return [result copy]; //creates a non-mutable NSString, just in case.
 }
 
 - (void) startMenu {
