@@ -7,7 +7,7 @@
 #ifdef OVL0
 
 /* Note: Arrays are column first, while the screen is row first */
-static int expl[3][3] = {
+static int explode1[3][3] = {
 	{ S_explode1, S_explode4, S_explode7 },
 	{ S_explode2, S_explode5, S_explode8 },
 	{ S_explode3, S_explode6, S_explode9 }
@@ -182,7 +182,7 @@ int expltype;
 		for (i=0; i<3; i++) for (j=0; j<3; j++) {
 			if (explmask[i][j] == 2) continue;
 			tmp_at(starting ? DISP_BEAM : DISP_CHANGE,
-				explosion_to_glyph(expltype,expl[i][j]));
+				explosion_to_glyph(expltype,explode1[i][j]));
 			tmp_at(i+x-1, j+y-1);
 			starting = 0;
 		}
@@ -208,7 +208,7 @@ int expltype;
 		    for (i=0; i<3; i++) for (j=0; j<3; j++) {
 			if (explmask[i][j] == 1)
 			    show_glyph(i+x-1,j+y-1,
-					explosion_to_glyph(expltype, expl[i][j]));
+					explosion_to_glyph(expltype, explode1[i][j]));
 		    }
 
 		} else {		/* delay a little bit. */

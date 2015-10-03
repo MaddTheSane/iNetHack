@@ -1,8 +1,8 @@
 //
-//  NethackYnFunction.m
+//  NethackYnFunction.swift
 //  iNetHack
 //
-//  Created by dirk on 7/1/09.
+//  Created by C.W. Betts on 10/3/15.
 //  Copyright 2009 Dirk Zimmermann. All rights reserved.
 //
 
@@ -20,23 +20,23 @@
 //  You should have received a copy of the GNU General Public License
 //  along with iNetHack.  If not, see <http://www.gnu.org/licenses/>.
 
-#import "NethackYnFunction.h"
+import Foundation
 
-@implementation NethackYnFunction
-
-@synthesize question, choices, defaultChoice, chosen;
-
-- (id) initWithQuestion:(const char *)q choices:(const char *)ch defaultChoice:(const char)c {
-	if (self = [super init]) {
-		question = q;
-		choices = ch;
-		defaultChoice = c;
+class NethackYnFunction : NSObject {
+	let question: UnsafePointer<CChar>
+	let choices: UnsafePointer<CChar>
+	let defaultChoice: CChar
+	var chosen = 0
+	
+	var choice: CChar {
+		return choices[chosen];
 	}
-	return self;
+	
+	init(question q: UnsafePointer<CChar>, choices ch: UnsafePointer<CChar>, defaultChoice c: CChar) {
+		question = q
+		choices = ch
+		defaultChoice = c
+		
+		super.init()
+	}
 }
-
-- (char) choice {
-	return choices[chosen];
-}
-
-@end

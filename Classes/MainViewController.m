@@ -28,7 +28,6 @@
 #import "MenuViewController.h"
 #import "MenuItem.h"
 #import "NethackMenuViewController.h"
-#import "NethackYnFunction.h"
 #import "TextInputViewController.h"
 #import "NethackEvent.h"
 #import "NethackEventQueue.h"
@@ -41,6 +40,7 @@
 #import "DMath.h"
 #import "NSString+Regexp.h"
 #import "RoleSelectionController.h"
+#import "iNetHack2-Swift.h"
 
 #define kOptionDoubleTapSensitivity (@"doubleTapSensitivity")
 #define kConstThingsThatAreHereTitle (@"Things that are here:")

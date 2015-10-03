@@ -157,7 +157,6 @@
 		43C104910FF91C9E00DBD0EF /* NethackMenuItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 43C104900FF91C9E00DBD0EF /* NethackMenuItem.m */; };
 		43C5AD890FFA75F7004F67ED /* NethackMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 43C5AD880FFA75F7004F67ED /* NethackMenuViewController.m */; };
 		43C5AD930FFA772B004F67ED /* NethackMenuView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 43C5AD920FFA772B004F67ED /* NethackMenuView.xib */; };
-		43C5F77F0FFB965800FAC706 /* NethackYnFunction.m in Sources */ = {isa = PBXBuildFile; fileRef = 43C5F77E0FFB965800FAC706 /* NethackYnFunction.m */; };
 		43CA7F73108F0B67006D377A /* HearseFileRegistry.m in Sources */ = {isa = PBXBuildFile; fileRef = 43CA7F72108F0B67006D377A /* HearseFileRegistry.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		43D113CF1007491700082C8D /* TextDisplayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 43D113CE1007491700082C8D /* TextDisplayViewController.m */; };
 		43D1142B10074E9F00082C8D /* news in Resources */ = {isa = PBXBuildFile; fileRef = 43D1142A10074E9F00082C8D /* news */; };
@@ -310,6 +309,7 @@
 		43DD0C430FF4ECEB00580249 /* Window.m in Sources */ = {isa = PBXBuildFile; fileRef = 43DD0C420FF4ECEB00580249 /* Window.m */; };
 		43F3397910BD4C6F0054E1A9 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 43F3397810BD4C6F0054E1A9 /* SystemConfiguration.framework */; };
 		43F33A1610BD59390054E1A9 /* FileLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = 43F33A1510BD59390054E1A9 /* FileLogger.m */; };
+		55A5AA781BC078B400A0F6B6 /* NethackYnFunction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55A5AA771BC078B400A0F6B6 /* NethackYnFunction.swift */; settings = {ASSET_TAGS = (); }; };
 		916CE038102C57E8000535FC /* credits.html in Resources */ = {isa = PBXBuildFile; fileRef = 916CE037102C57E8000535FC /* credits.html */; };
 		9194B22C1032CADB009BDE61 /* RoleSelectionController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9194B22B1032CADB009BDE61 /* RoleSelectionController.m */; };
 		9194B2AE1032E48A009BDE61 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9194B2AD1032E48A009BDE61 /* QuartzCore.framework */; };
@@ -590,8 +590,6 @@
 		43C5AD870FFA75F7004F67ED /* NethackMenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NethackMenuViewController.h; sourceTree = "<group>"; };
 		43C5AD880FFA75F7004F67ED /* NethackMenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NethackMenuViewController.m; sourceTree = "<group>"; };
 		43C5AD920FFA772B004F67ED /* NethackMenuView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NethackMenuView.xib; sourceTree = "<group>"; };
-		43C5F77D0FFB965800FAC706 /* NethackYnFunction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NethackYnFunction.h; sourceTree = "<group>"; };
-		43C5F77E0FFB965800FAC706 /* NethackYnFunction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NethackYnFunction.m; sourceTree = "<group>"; };
 		43CA7F71108F0B67006D377A /* HearseFileRegistry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HearseFileRegistry.h; sourceTree = "<group>"; };
 		43CA7F72108F0B67006D377A /* HearseFileRegistry.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HearseFileRegistry.m; sourceTree = "<group>"; };
 		43D113CD1007491700082C8D /* TextDisplayViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TextDisplayViewController.h; sourceTree = "<group>"; };
@@ -754,6 +752,8 @@
 		43F3397810BD4C6F0054E1A9 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		43F33A1410BD59390054E1A9 /* FileLogger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FileLogger.h; sourceTree = "<group>"; };
 		43F33A1510BD59390054E1A9 /* FileLogger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FileLogger.m; sourceTree = "<group>"; };
+		55A5AA741BC0748000A0F6B6 /* iNetHack2-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "iNetHack2-Bridging-Header.h"; sourceTree = "<group>"; };
+		55A5AA771BC078B400A0F6B6 /* NethackYnFunction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NethackYnFunction.swift; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		916CE037102C57E8000535FC /* credits.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = credits.html; sourceTree = "<group>"; };
 		9194B22A1032CADB009BDE61 /* RoleSelectionController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RoleSelectionController.h; sourceTree = "<group>"; };
@@ -787,6 +787,7 @@
 		080E96DDFE201D6D7F000001 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				55A5AA741BC0748000A0F6B6 /* iNetHack2-Bridging-Header.h */,
 				1D3623240D0F684500981E51 /* iNethackAppDelegate.h */,
 				1D3623250D0F684500981E51 /* iNethackAppDelegate.m */,
 				43DD07A90FF4C60400580249 /* MainViewController.h */,
@@ -809,8 +810,7 @@
 				43C5AD880FFA75F7004F67ED /* NethackMenuViewController.m */,
 				43AFFC1E103FE53500DCC8C1 /* ItemAmountViewController.h */,
 				43AFFC1F103FE53500DCC8C1 /* ItemAmountViewController.m */,
-				43C5F77D0FFB965800FAC706 /* NethackYnFunction.h */,
-				43C5F77E0FFB965800FAC706 /* NethackYnFunction.m */,
+				55A5AA771BC078B400A0F6B6 /* NethackYnFunction.swift */,
 				43AE49060FFDE32B0010A6F5 /* TextInputViewController.h */,
 				43AE49070FFDE32B0010A6F5 /* TextInputViewController.m */,
 				439D6BAE0FFE4B9600F60623 /* NethackEvent.h */,
@@ -1359,6 +1359,7 @@
 		29B97313FDCFA39411CA2CEA /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftUpdateCheck = 0700;
 				LastUpgradeCheck = 0700;
 				TargetAttributes = {
 					1D6058900D05DD3D006BFB54 = {
@@ -1576,6 +1577,7 @@
 				43C0DD740FE79DFE00B63ED3 /* cmd.c in Sources */,
 				43C0DD750FE79DFE00B63ED3 /* dbridge.c in Sources */,
 				43C0DD760FE79DFE00B63ED3 /* decl.c in Sources */,
+				55A5AA781BC078B400A0F6B6 /* NethackYnFunction.swift in Sources */,
 				43C0DD770FE79DFE00B63ED3 /* detect.c in Sources */,
 				43C0DD780FE79DFE00B63ED3 /* dig.c in Sources */,
 				43C0DD790FE79DFE00B63ED3 /* display.c in Sources */,
@@ -1680,7 +1682,6 @@
 				43C103FB0FF8DCD800DBD0EF /* MenuItem.m in Sources */,
 				43C104910FF91C9E00DBD0EF /* NethackMenuItem.m in Sources */,
 				43C5AD890FFA75F7004F67ED /* NethackMenuViewController.m in Sources */,
-				43C5F77F0FFB965800FAC706 /* NethackYnFunction.m in Sources */,
 				43AE49080FFDE32B0010A6F5 /* TextInputViewController.m in Sources */,
 				439D6BB00FFE4B9600F60623 /* NethackEvent.m in Sources */,
 				439D6BE10FFE4DC000F60623 /* NethackEventQueue.m in Sources */,
@@ -1717,6 +1718,7 @@
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
@@ -1725,8 +1727,11 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = iNetHack_Prefix.pch;
 				INFOPLIST_FILE = Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.futureshocksoftware.inethack2;
 				PRODUCT_NAME = iNetHack2;
+				SWIFT_OBJC_BRIDGING_HEADER = "Classes/iNetHack2-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -1737,14 +1742,17 @@
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				COPY_PHASE_STRIP = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = iNetHack_Prefix.pch;
 				INFOPLIST_FILE = Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.futureshocksoftware.inethack2;
 				PRODUCT_NAME = iNetHack2;
+				SWIFT_OBJC_BRIDGING_HEADER = "Classes/iNetHack2-Bridging-Header.h";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
@@ -1775,6 +1783,7 @@
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
@@ -1782,9 +1791,11 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = iNetHack_Prefix.pch;
 				INFOPLIST_FILE = Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.futureshocksoftware.inethack2;
 				PRODUCT_NAME = iNetHack2;
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "Classes/iNetHack2-Bridging-Header.h";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Distribution;

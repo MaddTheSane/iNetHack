@@ -78,7 +78,7 @@
 }
 
 - (NSString *) stringWithTrimmedWhitespaces {
-	NSMutableString *s1 = [NSMutableString stringWithCapacity:1];
+	NSMutableString *s1 = [[NSMutableString alloc] initWithCapacity:1];
 	BOOL wasSpace = NO;
 	for (int i = 0; i < self.length; ++i) {
 		char c = [self characterAtIndex:i];
@@ -94,7 +94,7 @@
 			}
 		}
 	}
-	return s1;
+	return [s1 copy];
 }
 
 @end

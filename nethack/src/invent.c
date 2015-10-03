@@ -1684,6 +1684,10 @@ find_unpaid(list, last_found)
     return (struct obj *) 0;
 }
 
+#ifdef __APPLE__
+#include "TargetConditionals.h"
+#endif
+
 /*
  * Internal function used by display_inventory and getobj that can display
  * inventory and return a count as well as a letter. If out_cnt is not null,
@@ -1736,10 +1740,6 @@ long* out_cnt;
 	/* oxymoron? temporarily assign permanent inventory letters */
 	if (!flags.invlet_constant) reassign();
 
-#ifdef __APPLE__
-#include "TargetConditionals.h"
-#endif
-	
 #if !TARGET_OS_IPHONE
 	/* I would prefer this code to be removed for other window ports too.
 	 With windows ideally I should never have to look at keyboard shortcuts for items.

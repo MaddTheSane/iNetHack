@@ -20,7 +20,7 @@ STATIC_DCL void FDECL(maze0xy,(coord *));
 STATIC_DCL boolean FDECL(put_lregion_here,(XCHAR_P,XCHAR_P,XCHAR_P,
 	XCHAR_P,XCHAR_P,XCHAR_P,XCHAR_P,BOOLEAN_P,d_level *));
 STATIC_DCL void NDECL(fixup_special);
-STATIC_DCL void FDECL(move, (int *,int *,int));
+STATIC_DCL void FDECL(moveNH, (int *,int *,int));
 STATIC_DCL void NDECL(setup_waterlevel);
 STATIC_DCL void NDECL(unsetup_waterlevel);
 
@@ -199,8 +199,8 @@ okay(x,y,dir)
 int x,y;
 register int dir;
 {
-	move(&x,&y,dir);
-	move(&x,&y,dir);
+	moveNH(&x,&y,dir);
+	moveNH(&x,&y,dir);
 	if(x<3 || y<3 || x>x_maze_max || y>y_maze_max || levl[x][y].typ != 0)
 		return(FALSE);
 	return(TRUE);
@@ -729,20 +729,20 @@ int x,y;
 			if(okay(x,y,a)) dirs[q++]= a;
 		if(!q) return;
 		dir = dirs[rn2(q)];
-		move(&x,&y,dir);
+		moveNH(&x,&y,dir);
 #ifndef WALLIFIED_MAZE
 		levl[x][y].typ = CORR;
 #else
 		levl[x][y].typ = ROOM;
 #endif
-		move(&x,&y,dir);
+		moveNH(&x,&y,dir);
 		walkfrom(x,y);
 	}
 }
 #endif /* MICRO */
 
 STATIC_OVL void
-move(x,y,dir)
+moveNH(x,y,dir)
 register int *x, *y;
 register int dir;
 {

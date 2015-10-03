@@ -25,11 +25,11 @@
 #import "MainViewController.h"
 #import "Window.h"
 #import "NethackMenuItem.h"
-#import "NethackYnFunction.h"
 #import "NethackEvent.h"
 #import "NethackEventQueue.h"
 #import "NSString+Regexp.h"
 #import "TilePosition.h"
+#import "iNetHack2-Swift.h"
 
 // for md5 methods
 #import "Hearse.h"
