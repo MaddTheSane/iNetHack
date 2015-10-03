@@ -35,8 +35,6 @@
 #import "ExtendedCommandViewController.h"
 #import "TextDisplayViewController.h"
 #import "TilePosition.h"
-#import "TouchInfo.h"
-#import "TouchInfoStore.h"
 #import "DMath.h"
 #import "NSString+Regexp.h"
 #import "RoleSelectionController.h"
