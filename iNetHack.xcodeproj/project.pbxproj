@@ -31,7 +31,6 @@
 		43A103AC10B5706E006DD634 /* tiles32.png in Resources */ = {isa = PBXBuildFile; fileRef = 43A103A710B5706E006DD634 /* tiles32.png */; };
 		43A1879D100C9129001BDB88 /* Shortcut.m in Sources */ = {isa = PBXBuildFile; fileRef = 43A1879C100C9129001BDB88 /* Shortcut.m */; };
 		43A187A8100C92DC001BDB88 /* ShortcutView.m in Sources */ = {isa = PBXBuildFile; fileRef = 43A187A7100C92DC001BDB88 /* ShortcutView.m */; };
-		43A7B06A10302D880083CE1B /* DMath.m in Sources */ = {isa = PBXBuildFile; fileRef = 43A7B06910302D880083CE1B /* DMath.m */; };
 		43A7B1CA103046EA0083CE1B /* petmark.png in Resources */ = {isa = PBXBuildFile; fileRef = 43A7B1C9103046EA0083CE1B /* petmark.png */; };
 		43ACB5D30FFF4A47005DB589 /* DirectionInputView.m in Sources */ = {isa = PBXBuildFile; fileRef = 43ACB5D20FFF4A47005DB589 /* DirectionInputView.m */; };
 		43ACB5D60FFF4A53005DB589 /* DirectionInputViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 43ACB5D50FFF4A53005DB589 /* DirectionInputViewController.m */; };
@@ -307,9 +306,10 @@
 		43DD0C430FF4ECEB00580249 /* Window.m in Sources */ = {isa = PBXBuildFile; fileRef = 43DD0C420FF4ECEB00580249 /* Window.m */; };
 		43F3397910BD4C6F0054E1A9 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 43F3397810BD4C6F0054E1A9 /* SystemConfiguration.framework */; };
 		43F33A1610BD59390054E1A9 /* FileLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = 43F33A1510BD59390054E1A9 /* FileLogger.m */; };
-		55A5AA781BC078B400A0F6B6 /* NethackYnFunction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55A5AA771BC078B400A0F6B6 /* NethackYnFunction.swift */; settings = {ASSET_TAGS = (); }; };
-		55A5AA7A1BC07F6C00A0F6B6 /* TouchInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55A5AA791BC07F6C00A0F6B6 /* TouchInfo.swift */; settings = {ASSET_TAGS = (); }; };
-		55A5AA7C1BC080B900A0F6B6 /* TouchInfoStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55A5AA7B1BC080B900A0F6B6 /* TouchInfoStore.swift */; settings = {ASSET_TAGS = (); }; };
+		55A5AA781BC078B400A0F6B6 /* NethackYnFunction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55A5AA771BC078B400A0F6B6 /* NethackYnFunction.swift */; };
+		55A5AA7A1BC07F6C00A0F6B6 /* TouchInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55A5AA791BC07F6C00A0F6B6 /* TouchInfo.swift */; };
+		55A5AA7C1BC080B900A0F6B6 /* TouchInfoStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55A5AA7B1BC080B900A0F6B6 /* TouchInfoStore.swift */; };
+		55D514AC1C25F5AE00B39BFB /* DMath.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55D514AB1C25F5AE00B39BFB /* DMath.swift */; };
 		916CE038102C57E8000535FC /* credits.html in Resources */ = {isa = PBXBuildFile; fileRef = 916CE037102C57E8000535FC /* credits.html */; };
 		9194B22C1032CADB009BDE61 /* RoleSelectionController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9194B22B1032CADB009BDE61 /* RoleSelectionController.m */; };
 		9194B2AE1032E48A009BDE61 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9194B2AD1032E48A009BDE61 /* QuartzCore.framework */; };
@@ -358,8 +358,6 @@
 		43A1879C100C9129001BDB88 /* Shortcut.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Shortcut.m; sourceTree = "<group>"; };
 		43A187A6100C92DC001BDB88 /* ShortcutView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShortcutView.h; sourceTree = "<group>"; };
 		43A187A7100C92DC001BDB88 /* ShortcutView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShortcutView.m; sourceTree = "<group>"; };
-		43A7B06810302D880083CE1B /* DMath.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DMath.h; sourceTree = "<group>"; };
-		43A7B06910302D880083CE1B /* DMath.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DMath.m; sourceTree = "<group>"; };
 		43A7B1C9103046EA0083CE1B /* petmark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = petmark.png; path = ../petmark.png; sourceTree = "<group>"; };
 		43ACB5D10FFF4A47005DB589 /* DirectionInputView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DirectionInputView.h; sourceTree = "<group>"; };
 		43ACB5D20FFF4A47005DB589 /* DirectionInputView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DirectionInputView.m; sourceTree = "<group>"; };
@@ -752,6 +750,7 @@
 		55A5AA771BC078B400A0F6B6 /* NethackYnFunction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NethackYnFunction.swift; sourceTree = "<group>"; };
 		55A5AA791BC07F6C00A0F6B6 /* TouchInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TouchInfo.swift; sourceTree = "<group>"; };
 		55A5AA7B1BC080B900A0F6B6 /* TouchInfoStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TouchInfoStore.swift; sourceTree = "<group>"; };
+		55D514AB1C25F5AE00B39BFB /* DMath.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DMath.swift; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		916CE037102C57E8000535FC /* credits.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = credits.html; sourceTree = "<group>"; };
 		9194B22A1032CADB009BDE61 /* RoleSelectionController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RoleSelectionController.h; sourceTree = "<group>"; };
@@ -837,8 +836,7 @@
 				55A5AA7B1BC080B900A0F6B6 /* TouchInfoStore.swift */,
 				431FE515102B3CE800B15149 /* NSString+Regexp.h */,
 				431FE516102B3CE800B15149 /* NSString+Regexp.m */,
-				43A7B06810302D880083CE1B /* DMath.h */,
-				43A7B06910302D880083CE1B /* DMath.m */,
+				55D514AB1C25F5AE00B39BFB /* DMath.swift */,
 				43AFFBDE103FDF4B00DCC8C1 /* NSString+NetHack.h */,
 				43AFFBDF103FDF4B00DCC8C1 /* NSString+NetHack.m */,
 				43CA7F71108F0B67006D377A /* HearseFileRegistry.h */,
@@ -1653,6 +1651,7 @@
 				43C0DDC10FE79DFE00B63ED3 /* steal.c in Sources */,
 				43C0DDC20FE79DFE00B63ED3 /* steed.c in Sources */,
 				43C0DDC30FE79DFE00B63ED3 /* teleport.c in Sources */,
+				55D514AC1C25F5AE00B39BFB /* DMath.swift in Sources */,
 				43C0DDC40FE79DFE00B63ED3 /* timeout.c in Sources */,
 				43C0DDC50FE79DFE00B63ED3 /* topten.c in Sources */,
 				43C0DDC60FE79DFE00B63ED3 /* track.c in Sources */,
@@ -1693,7 +1692,6 @@
 				43A1879D100C9129001BDB88 /* Shortcut.m in Sources */,
 				43A187A8100C92DC001BDB88 /* ShortcutView.m in Sources */,
 				431FE517102B3CE800B15149 /* NSString+Regexp.m in Sources */,
-				43A7B06A10302D880083CE1B /* DMath.m in Sources */,
 				9194B22C1032CADB009BDE61 /* RoleSelectionController.m in Sources */,
 				43AFFBE0103FDF4B00DCC8C1 /* NSString+NetHack.m in Sources */,
 				43AFFC21103FE53500DCC8C1 /* ItemAmountViewController.m in Sources */,

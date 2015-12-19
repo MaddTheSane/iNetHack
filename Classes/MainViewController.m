@@ -35,7 +35,6 @@
 #import "ExtendedCommandViewController.h"
 #import "TextDisplayViewController.h"
 #import "TilePosition.h"
-#import "DMath.h"
 #import "NSString+Regexp.h"
 #import "RoleSelectionController.h"
 #import "iNetHack2-Swift.h"
@@ -405,67 +404,73 @@ static MainViewController *instance;
 }
 
 // obsolete
-- (char) directionFromDMathDirection:(dmathdirection)dmdir {
+- (char) directionFromDMathDirection:(DMathDirection)dmdir {
 	char direction = 0;
 	switch (dmdir) {
-		case kUp:
+		case DMathDirectionUp:
 			direction = 'k';
 			break;
-		case kUpRight:
+		case DMathDirectionUpRight:
 			direction = 'u';
 			break;
-		case kRight:
+		case DMathDirectionRight:
 			direction = 'l';
 			break;
-		case kDownRight:
+		case DMathDirectionDownRight:
 			direction = 'n';
 			break;
-		case kDown:
+		case DMathDirectionDown:
 			direction = 'j';
 			break;
-		case kDownLeft:
+		case DMathDirectionDownLeft:
 			direction = 'b';
 			break;
-		case kLeft:
+		case DMathDirectionLeft:
 			direction = 'h';
 			break;
-		case kUpLeft:
+		case DMathDirectionUpLeft:
 			direction = 'y';
+			break;
+			
+		default:
 			break;
 	}
 	return direction;
 }
 
-- (void) moveTilePosition:(TilePosition *)tp intoDMathDirection:(dmathdirection)dmdir {
+- (void) moveTilePosition:(TilePosition *)tp intoDMathDirection:(DMathDirection)dmdir {
 	// dmdir is cartesian, tp is not ...
 	switch (dmdir) {
-		case kUp:
+		case DMathDirectionUp:
 			tp.y--;
 			break;
-		case kUpRight:
+		case DMathDirectionUpRight:
 			tp.x++;
 			tp.y--;
 			break;
-		case kRight:
+		case DMathDirectionRight:
 			tp.x++;
 			break;
-		case kDownRight:
+		case DMathDirectionDownRight:
 			tp.x++;
 			tp.y++;
 			break;
-		case kDown:
+		case DMathDirectionDown:
 			tp.y++;
 			break;
-		case kDownLeft:
+		case DMathDirectionDownLeft:
 			tp.x--;
 			tp.y++;
 			break;
-		case kLeft:
+		case DMathDirectionLeft:
 			tp.x--;
 			break;
-		case kUpLeft:
+		case DMathDirectionUpLeft:
 			tp.x--;
 			tp.y--;
+			break;
+			
+		default:
 			break;
 	}
 }
@@ -597,7 +602,7 @@ static MainViewController *instance;
 						CGPoint pointDelta = CGPointMake(p.x-center.x, p.y-center.y);
 						pointDelta.y *= -1;
 						pointDelta = [DMath normalizedPoint:pointDelta];
-						dmathdirection dmdir = [dmath directionFromVector:pointDelta];
+						DMathDirection dmdir = [dmath directionFromVector:pointDelta];
 						TilePosition *tp = [TilePosition tilePositionWithX:u.ux y:u.uy];
 						[self moveTilePosition:tp intoDMathDirection:dmdir];
 						lastSingleTapDelta.x = tp.x-u.ux;
