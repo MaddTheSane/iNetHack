@@ -20,6 +20,8 @@
 //  You should have received a copy of the GNU General Public License
 //  along with iNetHack.  If not, see <http://www.gnu.org/licenses/>.
 
+#include <math.h>
+#include <tgmath.h>
 #import "DMath.h"
 
 @implementation DMath
@@ -28,7 +30,7 @@
 
 + (CGPoint) normalizedPoint:(CGPoint)ps {
 	CGPoint p = ps;
-	float length = sqrt(p.x*p.x + p.y*p.y);
+	CGFloat length = sqrt(p.x*p.x + p.y*p.y);
 	p.x /= length;
 	p.y /= length;
 	return p;
@@ -51,7 +53,7 @@
 
 - (dmathdirection) directionFromVector:(CGPoint)p {
 	for (int i = kUp; i <= kUpLeft; ++i) {
-		float d = DMath_VDIST(directions[i],p);
+		CGFloat d = DMath_VDIST(directions[i],p);
 		if (fabs(d) <= stdDistance) {
 			return i;
 		}

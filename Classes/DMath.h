@@ -26,7 +26,7 @@ typedef NS_ENUM(NSInteger, dmathdirection) { kUp, kUpRight, kRight, kDownRight, 
 
 @interface DMath : NSObject {
 
-	float stdDistance;
+	CGFloat stdDistance;
 	CGPoint directions[8];
 
 }
