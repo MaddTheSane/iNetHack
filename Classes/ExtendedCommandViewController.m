@@ -95,7 +95,7 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
 	struct ext_func_tab *f = extcmdlist;
-	int c = 0;
+	NSInteger c = 0;
 	while (f++->ef_txt) {
 		c++;
 	}
