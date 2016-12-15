@@ -36,9 +36,9 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, readonly) NSInteger count;
 @property (nonatomic, assign) NSTimeInterval singleTapTimestamp;
 
-- (void) storeTouches:(NSSet<UITouch*> *)touches;
-- (nullable TouchInfo *) touchInfoForTouch:(UITouch *)t;
-- (void) removeTouches:(NSSet<UITouch*> *)touches;
+- (void) storeTouches:(NSSet<TouchInfo*> *)touches;
+- (TouchInfo *) touchInfoForTouch:(UITouch *)t;
+- (void) removeTouches:(NSSet<TouchInfo*> *)touches;
 
 @end
 
