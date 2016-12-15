@@ -1,8 +1,12 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="8191" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11762" systemVersion="16C67" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" colorMatched="YES">
+    <device id="retina4_0" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MainMenuViewController">
@@ -15,6 +19,13 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
             <autoresizingMask key="autoresizingMask"/>
             <subviews>
+                <imageView opaque="NO" clearsContextBeforeDrawing="NO" userInteractionEnabled="NO" contentMode="scaleToFill" image="Icon.png" translatesAutoresizingMaskIntoConstraints="NO" id="6">
+                    <rect key="frame" x="121" y="20" width="78" height="82"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="78" id="9ib-3u-yD8"/>
+                        <constraint firstAttribute="height" constant="82" id="ifs-Om-sUk"/>
+                    </constraints>
+                </imageView>
                 <button opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4">
                     <rect key="frame" x="84.5" y="423" width="151" height="37"/>
                     <constraints>
@@ -24,22 +35,15 @@
                     <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="15"/>
                     <size key="titleShadowOffset" width="1" height="1"/>
                     <state key="normal" title="New Game">
-                        <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </state>
                     <connections>
                         <action selector="startNewGame:" destination="-1" eventType="touchUpInside" id="5"/>
                     </connections>
                 </button>
-                <imageView opaque="NO" clearsContextBeforeDrawing="NO" userInteractionEnabled="NO" contentMode="scaleToFill" image="Icon.png" translatesAutoresizingMaskIntoConstraints="NO" id="6">
-                    <rect key="frame" x="121" y="20" width="78" height="82"/>
-                    <constraints>
-                        <constraint firstAttribute="width" constant="78" id="9ib-3u-yD8"/>
-                        <constraint firstAttribute="height" constant="82" id="ifs-Om-sUk"/>
-                    </constraints>
-                </imageView>
             </subviews>
-            <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+            <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstItem="4" firstAttribute="centerX" secondItem="1" secondAttribute="centerX" id="MbI-dW-u7f"/>
                 <constraint firstAttribute="bottom" secondItem="4" secondAttribute="bottom" constant="20" symbolic="YES" id="Vil-WT-RpO"/>
@@ -52,4 +56,9 @@
     <resources>
         <image name="Icon.png" width="1024" height="1024"/>
     </resources>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedStatusBarMetrics key="statusBar"/>
+        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedScreenMetrics key="destination" type="retina4_0.fullscreen"/>
+    </simulatedMetricsContainer>
 </document>
