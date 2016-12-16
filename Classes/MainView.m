@@ -327,7 +327,7 @@
         
 		UIFont *font = [self fontAndSize:&backgroundRect.size forString:s withFont:statusFont];
 
-        CGRect backgroundRect = CGRectMake(p.x, p.y, backgroundRect.size.width, backgroundRect.size.height);
+		backgroundRect = CGRectMake(p.x, p.y, backgroundRect.size.width, backgroundRect.size.height);
 		CGContextFillRect(ctx, backgroundRect);
         CGSize tmp = [s sizeWithAttributes:@{NSFontAttributeName:font}];
         //iNethack2: some users reported missing status bars. Couldn't reproduce, but using below as it worked for the messages...

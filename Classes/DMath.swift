@@ -23,7 +23,7 @@
 import Foundation
 import CoreGraphics
 
-private func DMath_VDIST(v1: CGPoint, _ v2: CGPoint) -> CGFloat {
+private func DMath_VDIST(_ v1: CGPoint, _ v2: CGPoint) -> CGFloat {
 	return sqrt((v2.x-v1.x)*(v2.x-v1.x)+(v2.y-v1.y)*(v2.y-v1.y))
 }
 
@@ -44,7 +44,7 @@ class DMath: NSObject {
 	private let stdDistance: CGFloat
 	private let directions: [CGPoint]
 	
-	class func normalizedPoint(ps: CGPoint) -> CGPoint {
+	class func normalizedPoint(_ ps: CGPoint) -> CGPoint {
 		var p = ps
 		let length = sqrt(p.x*p.x + p.y*p.y)
 		p.x /= length;
@@ -69,7 +69,7 @@ class DMath: NSObject {
 		super.init()
 	}
 	
-	func directionFromVector(p: CGPoint) -> DMathDirection {
+	@objc(directionFromVector:) func directionFrom(vector p: CGPoint) -> DMathDirection {
 		// DMathDirection.Up to DMathDirection.UpLeft
 		for i in 0...7 {
 			let d = DMath_VDIST(directions[i], p)

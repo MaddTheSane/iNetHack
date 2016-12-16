@@ -45,14 +45,14 @@
 - (void) resize {
 	NSDictionary *info = [[NSFileManager defaultManager] attributesOfItemAtPath:filename error:NULL];
 	if (info) {
-		unsigned long size = [info fileSize];
+		NSUInteger size = (NSUInteger)[info fileSize];
 		if (size >= maxSize) {
-			int halfSize = maxSize / 2;
-			NSData *src = [[NSData alloc] initWithContentsOfMappedFile:filename];
+			NSInteger halfSize = maxSize / 2;
+			NSData *src = [[NSData alloc] initWithContentsOfFile:filename options:NSDataReadingMappedIfSafe error:NULL];
 			NSData *sub = [src subdataWithRange:NSMakeRange(size - halfSize, halfSize)];
 			const char *bytes = [sub bytes];
 			const char *pBytes = bytes;
-			int offset = 0;
+			NSInteger offset = 0;
 			while (*pBytes++ != '\n' && offset < halfSize) {
 				offset++;
 			}

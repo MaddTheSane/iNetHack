@@ -33,7 +33,7 @@ class TouchInfo : NSObject {
 	var currentLocation: CGPoint
 	
 	init(touch t: UITouch) {
-		initialLocation = t.locationInView(t.view)
+		initialLocation = t.location(in: t.view)
 		currentLocation = initialLocation
 		super.init()
 	}

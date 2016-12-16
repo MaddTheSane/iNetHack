@@ -25,13 +25,13 @@ import UIKit
 class TouchInfoStore : NSObject {
 	private var currentTouchInfos = Dictionary<NSValue, TouchInfo>()
 	
-	var singleTapTimestamp: NSTimeInterval = 0
+	var singleTapTimestamp: TimeInterval = 0
 	
 	var count: Int {
 		return currentTouchInfos.count
 	}
 	
-	func storeTouches(touches: Set<UITouch>) {
+	func storeTouches(_ touches: Set<UITouch>) {
 		for t in touches {
 			let ti = TouchInfo(touch: t)
 			let k = NSValue(nonretainedObject: t)
@@ -39,15 +39,15 @@ class TouchInfoStore : NSObject {
 		}
 	}
 	
-	func touchInfoForTouch(t: UITouch) -> TouchInfo? {
+	func touchInfoForTouch(_ t: UITouch) -> TouchInfo? {
 		let k = NSValue(nonretainedObject: t)
 		return currentTouchInfos[k]
 	}
 	
-	func removeTouches(touches: Set<UITouch>) {
+	func removeTouches(_ touches: Set<UITouch>) {
 		for t in touches {
 			let k = NSValue(nonretainedObject: t)
-			currentTouchInfos.removeValueForKey(k)
+			currentTouchInfos.removeValue(forKey: k)
 		}
 	}
 }
